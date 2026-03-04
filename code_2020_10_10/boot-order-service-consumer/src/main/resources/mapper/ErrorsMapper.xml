@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.ErrorsMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Errors" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="threads" property="threads" jdbcType="VARCHAR" />
+    <result column="typeoferror" property="typeoferror" jdbcType="VARCHAR" />
+    <result column="numberoferrors" property="numberoferrors" jdbcType="VARCHAR" />
+    <result column="inerrors" property="inerrors" jdbcType="VARCHAR" />
+    <result column="inallsamples" property="inallsamples" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, threads, typeoferror, numberoferrors, inerrors, inallsamples
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from errors
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from errors
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Errors" >
+    insert into errors (id, threads, typeoferror, 
+      numberoferrors, inerrors, inallsamples
+      )
+    values (#{id,jdbcType=INTEGER}, #{threads,jdbcType=VARCHAR}, #{typeoferror,jdbcType=VARCHAR}, 
+      #{numberoferrors,jdbcType=VARCHAR}, #{inerrors,jdbcType=VARCHAR}, #{inallsamples,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Errors" >
+    insert into errors
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="threads != null" >
+        threads,
+      </if>
+      <if test="typeoferror != null" >
+        typeoferror,
+      </if>
+      <if test="numberoferrors != null" >
+        numberoferrors,
+      </if>
+      <if test="inerrors != null" >
+        inerrors,
+      </if>
+      <if test="inallsamples != null" >
+        inallsamples,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="threads != null" >
+        #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="typeoferror != null" >
+        #{typeoferror,jdbcType=VARCHAR},
+      </if>
+      <if test="numberoferrors != null" >
+        #{numberoferrors,jdbcType=VARCHAR},
+      </if>
+      <if test="inerrors != null" >
+        #{inerrors,jdbcType=VARCHAR},
+      </if>
+      <if test="inallsamples != null" >
+        #{inallsamples,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Errors" >
+    update errors
+    <set >
+      <if test="threads != null" >
+        threads = #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="typeoferror != null" >
+        typeoferror = #{typeoferror,jdbcType=VARCHAR},
+      </if>
+      <if test="numberoferrors != null" >
+        numberoferrors = #{numberoferrors,jdbcType=VARCHAR},
+      </if>
+      <if test="inerrors != null" >
+        inerrors = #{inerrors,jdbcType=VARCHAR},
+      </if>
+      <if test="inallsamples != null" >
+        inallsamples = #{inallsamples,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Errors" >
+    update errors
+    set threads = #{threads,jdbcType=VARCHAR},
+      typeoferror = #{typeoferror,jdbcType=VARCHAR},
+      numberoferrors = #{numberoferrors,jdbcType=VARCHAR},
+      inerrors = #{inerrors,jdbcType=VARCHAR},
+      inallsamples = #{inallsamples,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

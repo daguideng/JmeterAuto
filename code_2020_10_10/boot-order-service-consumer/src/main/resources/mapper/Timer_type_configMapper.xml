@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Timer_type_configMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Timer_type_config" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="threads" property="threads" jdbcType="VARCHAR" />
+    <result column="runtime" property="runtime" jdbcType="VARCHAR" />
+    <result column="delaytime" property="delaytime" jdbcType="VARCHAR" />
+    <result column="ifretry" property="ifretry" jdbcType="VARCHAR" />
+    <result column="ifoutinterval" property="ifoutinterval" jdbcType="VARCHAR" />
+    <result column="ifcustomlistener" property="ifcustomlistener" jdbcType="VARCHAR" />
+    <result column="ifrecordlogjtl" property="ifrecordlogjtl" jdbcType="VARCHAR" />
+    <result column="ifrecordlogjmeter" property="ifrecordlogjmeter" jdbcType="VARCHAR" />
+    <result column="ifbetweenvalue" property="ifbetweenvalue" jdbcType="VARCHAR" />
+    <result column="threadname" property="threadname" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="timestatus" property="timestatus" jdbcType="VARCHAR" />
+    <result column="ids" property="ids" jdbcType="VARCHAR" />
+    <result column="timetask" property="timetask" jdbcType="VARCHAR" />
+
+    <result column="jobname" property="jobname" jdbcType="VARCHAR" />
+    <result column="triggername" property="triggername" jdbcType="VARCHAR" />
+    <result column="jobgroup" property="jobgroup" jdbcType="VARCHAR" />
+    <result column="jobdescribe" property="jobdescribe" jdbcType="VARCHAR" />
+    <result column="deletestate" property="deletestate" jdbcType="INTEGER" />
+
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, threads, runtime, delaytime, ifretry, ifoutinterval, ifcustomlistener, ifrecordlogjtl, 
+    ifrecordlogjmeter, ifbetweenvalue, threadname, `status`, `type`,timestatus,ids,timetask,jobname,triggername,jobgroup,Jobdescribe,deletestate
+
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from timer_type_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <select id="selectBytype" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    *
+    from timer_type_config
+    where type = #{type,jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="selectByStatusTpye"  resultType="com.atguigu.gmall.entity.Timer_type_config">
+    select
+    *
+    from timer_type_config
+    where  type in
+    <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from timer_type_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Timer_type_config" >
+    insert into timer_type_config (threads, runtime,
+      delaytime, ifretry, ifoutinterval, 
+      ifcustomlistener, ifrecordlogjtl, ifrecordlogjmeter, 
+      ifbetweenvalue, threadname, `status`, 
+      `type`,timestatus,ids,timetask,jobname,triggername,jobgroup,jobdescribe,deletestate)
+    values (#{threads,jdbcType=VARCHAR}, #{runtime,jdbcType=VARCHAR},
+      #{delaytime,jdbcType=VARCHAR}, #{ifretry,jdbcType=VARCHAR}, #{ifoutinterval,jdbcType=VARCHAR}, 
+      #{ifcustomlistener,jdbcType=VARCHAR}, #{ifrecordlogjtl,jdbcType=VARCHAR}, #{ifrecordlogjmeter,jdbcType=VARCHAR}, 
+      #{ifbetweenvalue,jdbcType=VARCHAR}, #{threadname,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR},#{timestatus,jdbcType=VARCHAR},#{ids,jdbcType=VARCHAR},#{timetask,jdbcType=VARCHAR},
+      #{jobname,jdbcType=VARCHAR},#{triggername,jdbcType=VARCHAR},#{jobgroup,jdbcType=VARCHAR},
+      #{jobdescribe,jdbcType=VARCHAR},
+      #{deletestate,jdbcType=VARCHAR})
+  </insert>
+
+
+
+
+  <select id="queryimerTypeConfig"     resultType="com.atguigu.gmall.entity.Timer_type_config" >
+    select *  from timer_type_config where  deletestate = 1 and jobname = #{jobname,jdbcType=VARCHAR}
+  </select>
+
+
+  <select id="queryimerTypeConfigByNull"     resultType="com.atguigu.gmall.entity.Timer_type_config" >
+    select *  from timer_type_config where deletestate = 1 order by id asc
+  </select>
+
+
+
+
+  <!--  Map<String,Object> getByPrimaryKey(Integer id) -->
+  <select id="getByPrimaryKey"     resultType="map" >
+    select *  from timer_type_config where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <!--  更新运行状态 timetask  -->
+  <update id="updateTimeTpyeConfigBytimetask"  >
+    update  timer_type_config set timetask = #{timetask,jdbcType=VARCHAR} where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+  <!--  更新运行状态 timetask  -->
+  <update id="updateTimeTpyeConfigByids"  >
+    update  timer_type_config set ids = #{ids,jdbcType=VARCHAR} where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+  <!--  根据id,停用定时器  -->
+  <update id="updateBydisableId"  >
+    update  timer_type_config set timestatus = 'No' where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <!--   根据id,启用定时器:  -->
+  <update id="updateByableId"  >
+    update timer_type_config
+    set timestatus = 'Yes'
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <!--   根据id，逻辑删除定时器:  -->
+  <update id="deletestateById"  >
+    update timer_type_config
+    set deletestate = 0
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <!--   根据id，修改Type:  -->
+  <update id="updateTypeById"  >
+    update timer_type_config
+    set type = #{type,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+  <!--   根据id，修改Threrads:  -->
+  <update id="updateThreadsById"  >
+    update timer_type_config
+    set threads = #{threads,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+  <!--   根据id，修改Runtime:  -->
+  <update id="updateRuntimeById"  >
+    update timer_type_config
+    set runtime = #{runtime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+
+
+
+
+
+
+
+
+
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Timer_type_config" >
+    insert into timer_type_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="threads != null" >
+        threads,
+      </if>
+      <if test="runtime != null" >
+        runtime,
+      </if>
+      <if test="delaytime != null" >
+        delaytime,
+      </if>
+      <if test="ifretry != null" >
+        ifretry,
+      </if>
+      <if test="ifoutinterval != null" >
+        ifoutinterval,
+      </if>
+      <if test="ifcustomlistener != null" >
+        ifcustomlistener,
+      </if>
+      <if test="ifrecordlogjtl != null" >
+        ifrecordlogjtl,
+      </if>
+      <if test="ifrecordlogjmeter != null" >
+        ifrecordlogjmeter,
+      </if>
+      <if test="ifbetweenvalue != null" >
+        ifbetweenvalue,
+      </if>
+      <if test="threadname != null" >
+        threadname,
+      </if>
+      <if test="status != null" >
+        `status`,
+      </if>
+      <if test="type != null" >
+        `type`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="threads != null" >
+        #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="runtime != null" >
+        #{runtime,jdbcType=VARCHAR},
+      </if>
+      <if test="delaytime != null" >
+        #{delaytime,jdbcType=VARCHAR},
+      </if>
+      <if test="ifretry != null" >
+        #{ifretry,jdbcType=VARCHAR},
+      </if>
+      <if test="ifoutinterval != null" >
+        #{ifoutinterval,jdbcType=VARCHAR},
+      </if>
+      <if test="ifcustomlistener != null" >
+        #{ifcustomlistener,jdbcType=VARCHAR},
+      </if>
+      <if test="ifrecordlogjtl != null" >
+        #{ifrecordlogjtl,jdbcType=VARCHAR},
+      </if>
+      <if test="ifrecordlogjmeter != null" >
+        #{ifrecordlogjmeter,jdbcType=VARCHAR},
+      </if>
+      <if test="ifbetweenvalue != null" >
+        #{ifbetweenvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="threadname != null" >
+        #{threadname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Timer_type_config" >
+    update timer_type_config
+    <set >
+      <if test="threads != null" >
+        threads = #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="runtime != null" >
+        runtime = #{runtime,jdbcType=VARCHAR},
+      </if>
+      <if test="delaytime != null" >
+        delaytime = #{delaytime,jdbcType=VARCHAR},
+      </if>
+      <if test="ifretry != null" >
+        ifretry = #{ifretry,jdbcType=VARCHAR},
+      </if>
+      <if test="ifoutinterval != null" >
+        ifoutinterval = #{ifoutinterval,jdbcType=VARCHAR},
+      </if>
+      <if test="ifcustomlistener != null" >
+        ifcustomlistener = #{ifcustomlistener,jdbcType=VARCHAR},
+      </if>
+      <if test="ifrecordlogjtl != null" >
+        ifrecordlogjtl = #{ifrecordlogjtl,jdbcType=VARCHAR},
+      </if>
+      <if test="ifrecordlogjmeter != null" >
+        ifrecordlogjmeter = #{ifrecordlogjmeter,jdbcType=VARCHAR},
+      </if>
+      <if test="ifbetweenvalue != null" >
+        ifbetweenvalue = #{ifbetweenvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="threadname != null" >
+        threadname = #{threadname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        `status` = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Timer_type_config" >
+    update timer_type_config
+    set threads = #{threads,jdbcType=VARCHAR},
+      runtime = #{runtime,jdbcType=VARCHAR},
+      delaytime = #{delaytime,jdbcType=VARCHAR},
+      ifretry = #{ifretry,jdbcType=VARCHAR},
+      ifoutinterval = #{ifoutinterval,jdbcType=VARCHAR},
+      ifcustomlistener = #{ifcustomlistener,jdbcType=VARCHAR},
+      ifrecordlogjtl = #{ifrecordlogjtl,jdbcType=VARCHAR},
+      ifrecordlogjmeter = #{ifrecordlogjmeter,jdbcType=VARCHAR},
+      ifbetweenvalue = #{ifbetweenvalue,jdbcType=VARCHAR},
+      threadname = #{threadname,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      timestatus = #{timestatus,jdbcType=VARCHAR},
+      ids = #{ids,jdbcType=VARCHAR},
+      timetask = #{timetask,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

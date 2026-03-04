@@ -1,0 +1,17 @@
+{
+    "java.debug.settings.onBuildFailureProceed": true,
+
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-1.8",
+            "path": "/opt/jdk1.8/jdk1.8.0_131",
+            "default": true // (可选) 将其设置为默认的运行时，如果没有为项目指定的话
+        },
+        {
+            "name": "JavaSE-21",
+            "path": "/opt/jdk-21.0.2"
+        }
+        
+    ],
+    "git.ignoreLimitWarning": true
+}

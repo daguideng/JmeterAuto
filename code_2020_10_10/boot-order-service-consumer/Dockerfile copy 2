@@ -1,0 +1,64 @@
+FROM eclipse-temurin:17-jre-jammy
+
+LABEL maintainer="294332968@qq.com"
+LABEL description="Boot-Order-Service"
+LABEL version="1.0.0"
+
+ENV TZ=Asia/Shanghai
+ENV JAVA_OPTS="-server -Xms512m -Xmx1024m -XX:+UseG1GC -XX:MaxGCPauseMillis=150 -Djava.awt.headless=true -Dspring.jmx.enabled=false"
+
+# 合并所有系统操作到一个RUN指令
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
+    sed -i 's|http://archive.ubuntu.com|http://mirrors.aliyun.com|g' /etc/apt/sources.list && \
+    sed -i 's|http://security.ubuntu.com|http://mirrors.aliyun.com|g' /etc/apt/sources.list && \
+    apt-get update && \
+    (apt-get install -y ntpdate || apt-get install -y ntp) && \
+    apt-get install -y --no-install-recommends ca-certificates && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    # 创建目录结构
+    mkdir -p /usr/local/jmeter/jmeter_inter && \
+    mkdir -p /usr/local/jmeter/master/bootOrderServiceConsumer && \
+    mkdir -p /usr/local/jmeter/pathparameter && \
+    mkdir -p /usr/local/jmeter/mars/JmeterResultDir/jsp/result/test/jmeterScript && \
+    mkdir -p /usr/local/jmeter/mars/JmeterResultDir && \
+    mkdir -p /usr/local/jmeter/mars/jmeterStore && \
+    mkdir -p /usr/local/jmeter/mars/ReportResultDir && \
+    # 设置权限
+    chmod -R 755 /usr/local/jmeter && \
+    # 符号链接
+    ln -sf /opt/java/openjdk /usr/local/openjdk-17
+
+USER root
+WORKDIR /app
+
+# 复制应用文件
+COPY jdk8u412-b08 /app/jdk8u412-b08
+COPY node_0 /usr/local/jmeter/jmeter_inter/node_0
+COPY node_0 /usr/local/jmeter/jmeter_inter/node_1
+COPY node_0 /usr/local/jmeter/jmeter_inter/node_2
+COPY target/boot-order-service-consumer-0.0.1-SNAPSHOT.jar /usr/local/jmeter/master/bootOrderServiceConsumer/
+COPY src/main/resources/application.properties /usr/local/jmeter/master/bootOrderServiceConsumer/
+COPY src/main/resources/application.yml /usr/local/jmeter/master/bootOrderServiceConsumer/
+
+# 设置执行权限
+RUN chmod -R 755 /usr/local/jmeter/jmeter_inter/node_0/bin && \
+    chmod -R 755 /usr/local/jmeter/jmeter_inter/node_1/bin && \
+    chmod -R 755 /usr/local/jmeter/jmeter_inter/node_2/bin && \
+    chmod -R 755 /app/jdk8u412-b08/bin && \
+    chmod 644 /usr/local/jmeter/master/bootOrderServiceConsumer/application.properties && \
+    chmod 644 /usr/local/jmeter/master/bootOrderServiceConsumer/application.yml
+
+ENV JAVA_HOME=/opt/java/openjdk \
+    JAVA8_HOME=/app/jdk8u412-b08 \
+    PATH=/opt/java/openjdk/bin:/app/jdk8u412-b08/bin:$PATH
+
+EXPOSE 8089
+
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
+    CMD curl -f http://localhost:8089/actuator/health || exit 1
+
+# 直接启动，使用优化的JVM参数
+CMD /app/jdk8u412-b08/bin/java $JAVA_OPTS \
+    -jar /usr/local/jmeter/master/bootOrderServiceConsumer/boot-order-service-consumer-0.0.1-SNAPSHOT.jar

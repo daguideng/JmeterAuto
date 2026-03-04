@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Jmeter_perfor_current_reportMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Jmeter_perfor_current_report" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uploadid" property="uploadid" jdbcType="INTEGER" />
+    <result column="lastruntime" property="lastruntime" jdbcType="CHAR" />
+    <result column="scriptname" property="scriptname" jdbcType="VARCHAR" />
+    <result column="threads" property="threads" jdbcType="VARCHAR" />
+    <result column="label" property="label" jdbcType="VARCHAR" />
+    <result column="samples" property="samples" jdbcType="VARCHAR" />
+    <result column="ko" property="ko" jdbcType="VARCHAR" />
+    <result column="error" property="error" jdbcType="VARCHAR" />
+    <result column="average" property="average" jdbcType="VARCHAR" />
+    <result column="min" property="min" jdbcType="VARCHAR" />
+    <result column="max" property="max" jdbcType="VARCHAR" />
+    <result column="median" property="median" jdbcType="VARCHAR" />
+    <result column="thpct90" property="thpct90" jdbcType="VARCHAR" />
+    <result column="thpct95" property="thpct95" jdbcType="VARCHAR" />
+    <result column="thpct99" property="thpct99" jdbcType="VARCHAR" />
+    <result column="throughput" property="throughput" jdbcType="VARCHAR" />
+    <result column="received" property="received" jdbcType="VARCHAR" />
+    <result column="sent" property="sent" jdbcType="VARCHAR" />
+    <result column="ip" property="ip" jdbcType="VARCHAR" />
+    <result column="starttime" property="starttime" jdbcType="VARCHAR" />
+    <result column="endtime" property="endtime" jdbcType="VARCHAR" />
+    <result column="jtlpath" property="jtlpath" jdbcType="VARCHAR" />
+    <result column="indexpath" property="indexpath" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uploadid, lastruntime, scriptname, threads, `label`, samples, ko, error, average, 
+    `min`, `max`, median, thpct90, thpct95, thpct99, throughput, received, sent, ip, starttime, 
+    endtime, jtlpath, indexpath, `state`
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jmeter_perfor_current_report
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jmeter_perfor_current_report
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+
+
+
+
+
+
+
+
+  <select id="queryApiExecuteLog4ManageByIdAndPerfstarttime" resultType="map">
+    SELECT
+    *
+    FROM
+    (
+    select * from jmeter_perfor_current_report
+    )t
+    WHERE uploadid = #{uploadid,jdbcType=INTEGER}
+
+    AND lastruntime LIKE CONCAT('%', #{lastruntime,jdbcType=VARCHAR}, '%')   
+  </select>
+
+
+  <update id="updatePerfLastRunTime"   parameterType="java.lang.Integer">
+    update jmeter_perfor_current_report set lastruntime = #{lastruntime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <sql id="where_clause">
+    <where>
+      <foreach collection="criterions" index="index" item="criterion"
+               open="" separator="" close="">
+        <choose>
+          <when test="criterion.noValue">
+            and ${criterion.condition}
+          </when>
+          <when test="criterion.singleValue">
+            and ${criterion.condition} #{criterion.value}
+          </when>
+          <when test="criterion.betweenValue">
+            and ${criterion.condition} #{criterion.value} and
+            #{criterion.secondValue}
+          </when>
+          <when test="criterion.listValue">
+            and ${criterion.condition}
+            <foreach collection="criterion.value" item="listItem"
+                     open="(" close=")" separator=",">
+              #{listItem}
+            </foreach>
+          </when>
+        </choose>
+      </foreach>
+    </where>
+  </sql>
+
+  <select id="queryApiExecuteLog4Manage" resultType="map" parameterType="map">
+    SELECT *
+    FROM jmeter_perfor_current_report
+    <include refid="where_clause"/>    order by starttime  asc
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Jmeter_perfor_current_report" >
+    insert into jmeter_perfor_current_report (uploadid, lastruntime,
+      scriptname, threads, `label`, 
+      samples, ko, error, 
+      average, `min`, `max`, median, 
+      thpct90, thpct95, thpct99, 
+      throughput, received, sent, 
+      ip, starttime, endtime, 
+      jtlpath, indexpath, `state`
+      )
+    values ( #{uploadid,jdbcType=INTEGER}, #{lastruntime,jdbcType=CHAR},
+      #{scriptname,jdbcType=VARCHAR}, #{threads,jdbcType=VARCHAR}, #{label,jdbcType=VARCHAR}, 
+      #{samples,jdbcType=VARCHAR}, #{ko,jdbcType=VARCHAR}, #{error,jdbcType=VARCHAR}, 
+      #{average,jdbcType=VARCHAR}, #{min,jdbcType=VARCHAR}, #{max,jdbcType=VARCHAR}, #{median,jdbcType=VARCHAR}, 
+      #{thpct90,jdbcType=VARCHAR}, #{thpct95,jdbcType=VARCHAR}, #{thpct99,jdbcType=VARCHAR}, 
+      #{throughput,jdbcType=VARCHAR}, #{received,jdbcType=VARCHAR}, #{sent,jdbcType=VARCHAR}, 
+      #{ip,jdbcType=VARCHAR}, #{starttime,jdbcType=VARCHAR}, #{endtime,jdbcType=VARCHAR}, 
+      #{jtlpath,jdbcType=VARCHAR}, #{indexpath,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Jmeter_perfor_current_report" >
+    insert into jmeter_perfor_current_report
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uploadid != null" >
+        uploadid,
+      </if>
+      <if test="lastruntime != null" >
+        lastruntime,
+      </if>
+      <if test="scriptname != null" >
+        scriptname,
+      </if>
+      <if test="threads != null" >
+        threads,
+      </if>
+      <if test="label != null" >
+        `label`,
+      </if>
+      <if test="samples != null" >
+        samples,
+      </if>
+      <if test="ko != null" >
+        ko,
+      </if>
+      <if test="error != null" >
+        error,
+      </if>
+      <if test="average != null" >
+        average,
+      </if>
+      <if test="min != null" >
+        `min`,
+      </if>
+      <if test="max != null" >
+        `max`,
+      </if>
+      <if test="median != null" >
+        median,
+      </if>
+      <if test="thpct90 != null" >
+        thpct90,
+      </if>
+      <if test="thpct95 != null" >
+        thpct95,
+      </if>
+      <if test="thpct99 != null" >
+        thpct99,
+      </if>
+      <if test="throughput != null" >
+        throughput,
+      </if>
+      <if test="received != null" >
+        received,
+      </if>
+      <if test="sent != null" >
+        sent,
+      </if>
+      <if test="ip != null" >
+        ip,
+      </if>
+      <if test="starttime != null" >
+        starttime,
+      </if>
+      <if test="endtime != null" >
+        endtime,
+      </if>
+      <if test="jtlpath != null" >
+        jtlpath,
+      </if>
+      <if test="indexpath != null" >
+        indexpath,
+      </if>
+      <if test="state != null" >
+        `state`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uploadid != null" >
+        #{uploadid,jdbcType=INTEGER},
+      </if>
+      <if test="lastruntime != null" >
+        #{lastruntime,jdbcType=CHAR},
+      </if>
+      <if test="scriptname != null" >
+        #{scriptname,jdbcType=VARCHAR},
+      </if>
+      <if test="threads != null" >
+        #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="label != null" >
+        #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="samples != null" >
+        #{samples,jdbcType=VARCHAR},
+      </if>
+      <if test="ko != null" >
+        #{ko,jdbcType=VARCHAR},
+      </if>
+      <if test="error != null" >
+        #{error,jdbcType=VARCHAR},
+      </if>
+      <if test="average != null" >
+        #{average,jdbcType=VARCHAR},
+      </if>
+      <if test="min != null" >
+        #{min,jdbcType=VARCHAR},
+      </if>
+      <if test="max != null" >
+        #{max,jdbcType=VARCHAR},
+      </if>
+      <if test="median != null" >
+        #{median,jdbcType=VARCHAR},
+      </if>
+      <if test="thpct90 != null" >
+        #{thpct90,jdbcType=VARCHAR},
+      </if>
+      <if test="thpct95 != null" >
+        #{thpct95,jdbcType=VARCHAR},
+      </if>
+      <if test="thpct99 != null" >
+        #{thpct99,jdbcType=VARCHAR},
+      </if>
+      <if test="throughput != null" >
+        #{throughput,jdbcType=VARCHAR},
+      </if>
+      <if test="received != null" >
+        #{received,jdbcType=VARCHAR},
+      </if>
+      <if test="sent != null" >
+        #{sent,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null" >
+        #{starttime,jdbcType=VARCHAR},
+      </if>
+      <if test="endtime != null" >
+        #{endtime,jdbcType=VARCHAR},
+      </if>
+      <if test="jtlpath != null" >
+        #{jtlpath,jdbcType=VARCHAR},
+      </if>
+      <if test="indexpath != null" >
+        #{indexpath,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Jmeter_perfor_current_report" >
+    update jmeter_perfor_current_report
+    <set >
+      <if test="uploadid != null" >
+        uploadid = #{uploadid,jdbcType=INTEGER},
+      </if>
+      <if test="lastruntime != null" >
+        lastruntime = #{lastruntime,jdbcType=CHAR},
+      </if>
+      <if test="scriptname != null" >
+        scriptname = #{scriptname,jdbcType=VARCHAR},
+      </if>
+      <if test="threads != null" >
+        threads = #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="label != null" >
+        `label` = #{label,jdbcType=VARCHAR},
+      </if>
+      <if test="samples != null" >
+        samples = #{samples,jdbcType=VARCHAR},
+      </if>
+      <if test="ko != null" >
+        ko = #{ko,jdbcType=VARCHAR},
+      </if>
+      <if test="error != null" >
+        error = #{error,jdbcType=VARCHAR},
+      </if>
+      <if test="average != null" >
+        average = #{average,jdbcType=VARCHAR},
+      </if>
+      <if test="min != null" >
+        `min` = #{min,jdbcType=VARCHAR},
+      </if>
+      <if test="max != null" >
+        `max` = #{max,jdbcType=VARCHAR},
+      </if>
+      <if test="median != null" >
+        median = #{median,jdbcType=VARCHAR},
+      </if>
+      <if test="thpct90 != null" >
+        thpct90 = #{thpct90,jdbcType=VARCHAR},
+      </if>
+      <if test="thpct95 != null" >
+        thpct95 = #{thpct95,jdbcType=VARCHAR},
+      </if>
+      <if test="thpct99 != null" >
+        thpct99 = #{thpct99,jdbcType=VARCHAR},
+      </if>
+      <if test="throughput != null" >
+        throughput = #{throughput,jdbcType=VARCHAR},
+      </if>
+      <if test="received != null" >
+        received = #{received,jdbcType=VARCHAR},
+      </if>
+      <if test="sent != null" >
+        sent = #{sent,jdbcType=VARCHAR},
+      </if>
+      <if test="ip != null" >
+        ip = #{ip,jdbcType=VARCHAR},
+      </if>
+      <if test="starttime != null" >
+        starttime = #{starttime,jdbcType=VARCHAR},
+      </if>
+      <if test="endtime != null" >
+        endtime = #{endtime,jdbcType=VARCHAR},
+      </if>
+      <if test="jtlpath != null" >
+        jtlpath = #{jtlpath,jdbcType=VARCHAR},
+      </if>
+      <if test="indexpath != null" >
+        indexpath = #{indexpath,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        `state` = #{state,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Jmeter_perfor_current_report" >
+    update jmeter_perfor_current_report
+    set uploadid = #{uploadid,jdbcType=INTEGER},
+      lastruntime = #{lastruntime,jdbcType=CHAR},
+      scriptname = #{scriptname,jdbcType=VARCHAR},
+      threads = #{threads,jdbcType=VARCHAR},
+      `label` = #{label,jdbcType=VARCHAR},
+      samples = #{samples,jdbcType=VARCHAR},
+      ko = #{ko,jdbcType=VARCHAR},
+      error = #{error,jdbcType=VARCHAR},
+      average = #{average,jdbcType=VARCHAR},
+      `min` = #{min,jdbcType=VARCHAR},
+      `max` = #{max,jdbcType=VARCHAR},
+      median = #{median,jdbcType=VARCHAR},
+      thpct90 = #{thpct90,jdbcType=VARCHAR},
+      thpct95 = #{thpct95,jdbcType=VARCHAR},
+      thpct99 = #{thpct99,jdbcType=VARCHAR},
+      throughput = #{throughput,jdbcType=VARCHAR},
+      received = #{received,jdbcType=VARCHAR},
+      sent = #{sent,jdbcType=VARCHAR},
+      ip = #{ip,jdbcType=VARCHAR},
+      starttime = #{starttime,jdbcType=VARCHAR},
+      endtime = #{endtime,jdbcType=VARCHAR},
+      jtlpath = #{jtlpath,jdbcType=VARCHAR},
+      indexpath = #{indexpath,jdbcType=VARCHAR},
+      `state` = #{state,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+<select id="detailQueryTypePerfReport" resultType="map">
+  SELECT *
+  FROM jmeter_perfor_current_report
+  <where>
+    <if test="lastruntime != null and lastruntime != ''">
+      AND lastruntime >= #{lastruntime,jdbcType=VARCHAR}
+    </if>
+    <if test="uploadid != null and uploadid.size() > 0">
+      AND uploadid IN
+      <foreach collection="uploadid" item="item" open="(" separator="," close=")">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+  </where>
+  ORDER BY starttime ASC
+</select>
+
+
+
+<select id="sumPerfReport" resultType="map">
+  SELECT 
+    MIN(starttime) AS starttime,
+    MAX(endtime) AS endtime,
+    CAST(TIMEDIFF(
+        STR_TO_DATE(MAX(endtime), '%Y-%m-%d %H:%i:%s'), 
+        STR_TO_DATE(MIN(starttime), '%Y-%m-%d %H:%i:%s')
+    ) AS CHAR) AS elapsedtime,
+    CAST(SUM(CASE WHEN error IN ('0.0', '0.00', '0', '0.000') THEN 1 ELSE 0 END) AS CHAR) AS sucessCount,
+    CAST(SUM(CASE WHEN error NOT IN ('0.0', '0.00', '0', '0.000') OR error IS NULL THEN 1 ELSE 0 END) AS CHAR) AS failCount
+  FROM jmeter_perfor_current_report
+  <where>
+    <if test="lastruntime != null and lastruntime != ''">
+      AND lastruntime >= #{lastruntime,jdbcType=VARCHAR}
+    </if>
+    <if test="uploadid != null and uploadid.size() > 0">
+      AND uploadid IN
+      <foreach collection="uploadid" item="item" open="(" separator="," close=")">
+        #{item,jdbcType=INTEGER}
+      </foreach>
+    </if>
+  </where>
+</select>
+
+
+
+</mapper>

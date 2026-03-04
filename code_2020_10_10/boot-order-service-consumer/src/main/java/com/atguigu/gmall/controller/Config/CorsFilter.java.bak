@@ -1,0 +1,92 @@
+package com.atguigu.gmall.controller.Config;
+
+
+import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
+import javax.servlet.Filter;
+import javax.servlet.FilterChain;
+import javax.servlet.FilterConfig;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * @Author: dengdagui
+ * @Description:
+ * @Date: Created in 2019-9-26
+ */
+@Configuration
+public class CorsFilter implements Filter {  //implements Filter
+
+
+
+    private final List<String> allowedOrigins = Arrays.asList("http://localhost:9528");
+
+    @Override
+    public void init(FilterConfig filterConfig) {
+
+    }
+
+    @Override
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+        HttpServletResponse res = (HttpServletResponse) response;
+        HttpServletRequest req = (HttpServletRequest) request;
+        // Access-Control-Allow-Origin
+        String origin = req.getHeader("Origin");
+        res.setHeader("Access-Control-Allow-Origin",  origin);
+        res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS, DELETE");
+        res.setHeader("Access-Control-Max-Age", "3600");
+        res.setHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,authorization,x-token");
+        res.setHeader("Access-Control-Allow-Credentials", "true");
+
+
+
+        /**
+        res.setHeader("Accept","application/json, text/plain, *");
+        res.setHeader("Accept-Encoding","gzip, deflate, br");
+        res.setHeader("Accept-Language","zh-CN,zh;q=0.9");
+        res.setHeader("Connection","keep-alive");
+        res.setHeader("Content-Length","18");
+        res.setHeader("Content-Type","application/x-www-form-urlencoded");
+
+       **/
+
+        /**
+        res.setHeader("Connection","Upgrade");
+        res.setHeader("Upgrade","websocket");
+        res.setHeader("Sec-WebSocket-Extensions", "permessage-deflate;client_max_window_bits");
+        res.setHeader("Sec-WebSocket-Version", "13");
+         **/
+
+
+        /**
+        res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+        res.setHeader("Sec-WebSocket-Extensions", "permessage-deflate;client_max_window_bits");
+        res.setHeader("Upgrade", "websocket");
+        res.setHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36");
+        res.setHeader("Connection", "Upgrad");
+        res.setHeader("Accept-Encoding", "gzip, deflate");
+        res.setHeader("Connectio", "keep-alive");
+        **/
+
+
+        //请求之前都会发送一个OPTIONS来测试服务器是否支持跨域,直接return
+        if (req.getMethod().equals("OPTIONS")) {
+            res.setStatus(200);
+            return;
+        }
+
+        chain.doFilter(req, res);
+    }
+
+    @Override
+    public void destroy() {
+
+    }
+
+
+}

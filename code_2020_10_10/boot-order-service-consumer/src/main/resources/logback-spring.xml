@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="1 seconds">
+    <contextName>logback</contextName>
+    
+    <property name="log.path" value="/usr/local/jmeter/master/bootOrderServiceConsumer/log/" />
+    
+    <!-- 修正日志格式 - 包含完整的时间戳、级别、线程名、类名等信息 -->
+    <property name="LOG_PATTERN" 
+              value="%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level %X{PID:-1} --- [%15.15thread] %-50.50logger{49} : %msg%n" />
+
+    <!-- 1. 控制台输出 -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>INFO</level>
+        </filter>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <!-- WebSocket过滤器 -->
+        <filter class="com.atguigu.gmall.common.websocket.LogFilter">
+        </filter>
+    </appender>
+
+    <!-- 2. 主日志文件 -->
+    <appender name="MAIN_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/application.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/application-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 3. JMeter执行日志 -->
+    <appender name="JMETER_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/jmeter.log</file>
+        <encoder>
+            <pattern>${LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/jmeter-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>100MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 4. 专门处理JMeter命令输出的appender - 过滤掉不需要的前缀 -->
+    <appender name="JMETER_COMMAND_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/jmeter_command.log</file>
+        <encoder>
+            <pattern>%msg%n</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/jmeter_command-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>50MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+            <maxHistory>15</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <!-- 特定包名的详细配置 -->
+    
+    <!-- JMeter性能实现类 -->
+    <logger name="com.atguigu.gmall.Impl.perfImpl.JsonDataToDataPerfImpl" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+        <appender-ref ref="JMETER_FILE" />
+    </logger>
+    
+    <logger name="com.atguigu.gmall.Impl.perfImpl.CommandPerfJmeterImpl" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+        <appender-ref ref="JMETER_FILE" />
+        <!-- 额外输出到命令日志文件，不包含前缀 -->
+        <appender-ref ref="JMETER_COMMAND_FILE" />
+    </logger>
+    
+    <logger name="com.atguigu.gmall.Impl.perfImpl.JmeterPerfProcessImpl" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+        <appender-ref ref="JMETER_FILE" />
+    </logger>
+
+    <!-- JMeter服务 -->
+    <logger name="com.atguigu.gmall.service.jmeterperf.JmeterperformhistoryreportServer" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+        <appender-ref ref="JMETER_FILE" />
+    </logger>
+    
+    <logger name="com.atguigu.gmall.service.jmeterperf.JmeterperformcurrentreportServer" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+        <appender-ref ref="JMETER_FILE" />
+    </logger>
+    
+    <logger name="com.atguigu.gmall.service.jmeterperf.JmeterPerfTop5ErrorServer" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+        <appender-ref ref="JMETER_FILE" />
+    </logger>
+
+    <!-- 网络和连接相关 -->
+    <logger name="com.atguigu.gmall.zookeeperip.DynamicHTTPHostProvider" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+    </logger>
+
+    <!-- Zookeeper客户端 - 减少噪音 -->
+    <logger name="org.apache.zookeeper" level="WARN" additivity="false">
+        <appender-ref ref="MAIN_FILE" />
+    </logger>
+    
+    <logger name="org.I0Itec.zkclient" level="WARN" additivity="false">
+        <appender-ref ref="MAIN_FILE" />
+    </logger>
+    
+    <!-- 但保留重要的Zookeeper连接日志 -->
+    <logger name="org.apache.zookeeper.ZooKeeper" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+    </logger>
+    
+    <logger name="org.apache.zookeeper.ClientCnxn" level="INFO" additivity="false">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+    </logger>
+
+    <!-- 根配置 -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE" />
+        <appender-ref ref="MAIN_FILE" />
+    </root>
+</configuration>

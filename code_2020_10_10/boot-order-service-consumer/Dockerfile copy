@@ -1,0 +1,62 @@
+FROM eclipse-temurin:17-jre-jammy
+
+LABEL maintainer="294332968@qq.com"
+LABEL description="Boot-Order-Service"
+LABEL version="1.0.0"
+
+ENV TZ=Asia/Shanghai
+# 为 JDK 8 设置 JAVA_OPTS
+ENV JAVA8_OPTS="-server -Xms512m -Xmx1024m -XX:+UseG1GC -XX:MaxGCPauseMillis=150 -Djava.awt.headless=true -Dspring.jmx.enabled=false"
+ENV JAVA17_OPTS="--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED"
+
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone && \
+    sed -i 's|http://archive.ubuntu.com|http://mirrors.aliyun.com|g' /etc/apt/sources.list && \
+    sed -i 's|http://security.ubuntu.com|http://mirrors.aliyun.com|g' /etc/apt/sources.list && \
+    apt-get update && \
+    apt-get install -y --no-install-recommends ntpdate lsof curl && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* && \
+    mkdir -p /usr/local/jmeter/jmeter_inter && \
+    mkdir -p /usr/local/jmeter/master/bootOrderServiceConsumer && \
+    mkdir -p /usr/local/jmeter/pathparameter && \
+    mkdir -p /usr/local/jmeter/mars/JmeterResultDir/jsp/result/test/jmeterScript && \
+    mkdir -p /usr/local/jmeter/mars/JmeterResultDir && \
+    mkdir -p /usr/local/jmeter/mars/jmeterStore && \
+    mkdir -p /usr/local/jmeter/mars/ReportResultDir && \
+    mkdir -p /app/logs && \
+    chmod -R 755 /usr/local/jmeter && \
+    chmod -R 755 /usr/local/jmeter/pathparameter && \
+    ln -sf /opt/java/openjdk /usr/local/openjdk-17
+
+WORKDIR /app
+
+# 复制 JDK 8
+COPY jdk8u412-b08 /app/jdk8u412-b08
+COPY node_0 /usr/local/jmeter/jmeter_inter/node_0
+COPY node_0 /usr/local/jmeter/jmeter_inter/node_1
+COPY node_0 /usr/local/jmeter/jmeter_inter/node_2
+COPY target/boot-order-service-consumer-0.0.1-SNAPSHOT.jar /usr/local/jmeter/master/bootOrderServiceConsumer/
+COPY src/main/resources/application.properties /usr/local/jmeter/master/bootOrderServiceConsumer/
+COPY src/main/resources/application.yml /usr/local/jmeter/master/bootOrderServiceConsumer/
+
+# 设置执行权限
+RUN chmod -R 755 /usr/local/jmeter/jmeter_inter/node_0/bin && \
+    chmod -R 755 /usr/local/jmeter/jmeter_inter/node_1/bin && \
+    chmod -R 755 /usr/local/jmeter/jmeter_inter/node_2/bin && \
+    chmod -R 755 /app/jdk8u412-b08/bin && \
+    chmod 644 /usr/local/jmeter/master/bootOrderServiceConsumer/application.properties && \
+    chmod 644 /usr/local/jmeter/master/bootOrderServiceConsumer/application.yml
+
+# 设置环境变量 - JDK 17 用于系统，JDK 8 用于应用启动
+ENV JAVA_HOME=/opt/java/openjdk \
+    JAVA8_HOME=/app/jdk8u412-b08 \
+    PATH=/opt/java/openjdk/bin:/app/jdk8u412-b08/bin:$PATH
+
+EXPOSE 8089
+
+HEALTHCHECK --interval=30s --timeout=10s --start-period=120s --retries=3 \
+    CMD curl -f http://localhost:8089/actuator/health || exit 1
+
+# 使用 JDK 8 启动应用
+CMD exec /app/jdk8u412-b08/bin/java $JAVA8_OPTS \
+    -jar /usr/local/jmeter/master/bootOrderServiceConsumer/boot-order-service-consumer-0.0.1-SNAPSHOT.jar

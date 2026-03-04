@@ -1,0 +1,32 @@
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    $("#check-danger").click(function(e){
+        $(".case-tr").removeClass("hidden-tr");
+        $(".success").addClass("hidden-tr");
+        $(".warning").addClass("hidden-tr");
+        $(".error").addClass("hidden-tr");
+    });
+    $("#check-warning").click(function(e){
+        $(".case-tr").removeClass("hidden-tr");
+        $(".success").addClass("hidden-tr");
+        $(".danger").addClass("hidden-tr");
+        $(".error").addClass("hidden-tr");
+    });
+    $("#check-success").click(function(e){
+        $(".case-tr").removeClass("hidden-tr");
+        $(".warning").addClass("hidden-tr");
+        $(".danger").addClass("hidden-tr");
+        $(".error").addClass("hidden-tr");
+    });
+    $("#check-except").click(function(e){
+        $(".case-tr").removeClass("hidden-tr");
+        $(".warning").addClass("hidden-tr");
+        $(".danger").addClass("hidden-tr");
+        $(".success").addClass("hidden-tr");
+    });
+    $("#check-all").click(function(e){
+        $(".case-tr").removeClass("hidden-tr");
+    });
+</script>
+</body></html>

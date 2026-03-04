@@ -1,0 +1,1297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e5f1420a-7351-4987-8e4a-ee72cf38e240" name="Default" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/gmall_interface$BootUserServiceProviderApplication.coverage" NAME="BootUserServiceProviderApplication Coverage Results" MODIFIED="1558086838693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/gmall_interface$BootOrderServiceConsumerApplication.coverage" NAME="BootOrderServiceConsumerApplication Coverage Results" MODIFIED="1569821145084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <expand />
+    <select />
+  </component>
+  <component name="ErrorTreeViewConfiguration">
+    <option name="hideWarnings" value="true" />
+    <option name="HIDE_WARNINGS" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="HTML File" />
+        <option value="spring-beans.schema" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>JmeterScriptUploadImpl</find>
+      <find>server.rmi</find>
+      <find>\}\n</find>
+      <find>BootReportDataRequestReceive</find>
+      <find>PathParameters</find>
+      <find>checkReportQueryResult</find>
+      <find>Mozilla/4.0</find>
+      <find>download success</find>
+      <find>downLoadFromUrl</find>
+      <find>findPBCCalcResultByIdNo</find>
+      <find>CalculationService</find>
+      <find>HermesIP</find>
+      <find>test-yotta-hermes3.ucredit.com</find>
+      <find>providentfunds</find>
+      <find>HermesBasicUserName</find>
+      <find>8091</find>
+      <find>paymentBase</find>
+      <find>fundBaseMoney</find>
+      <find>paymentRatio</find>
+      <find>BeanNameAutoProxyCreator</find>
+      <find>/calculate</find>
+      <find>accumulationFund&quot;</find>
+      <find>SjRrdProvidentFunds</find>
+      <find>druid</find>
+      <find>index</find>
+      <find>RestController</find>
+      <find>auth/login</find>
+      <find>/login</find>
+      <find>auth</find>
+      <find>urlLogin</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+      <replace>logger.info</replace>
+      <replace>System.out.println</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>F:\boot_doubbo\code\boot-order-service-consumer\src\main\java\com\atguigu\gmall\common\jobs\BeanJob</dir>
+      <dir>F:\boot_doubbo\code\boot-order-service-consumer\src\main\java\com\atguigu\gmall\controller\perf</dir>
+      <dir>F:\boot_doubbo\code\boot-order-service-consumer\src\main\java\com\atguigu\gmall\controller\inter</dir>
+      <dir>F:\zhengxin\agent\workspace\workspace</dir>
+      <dir>F:\zhengxin\agent\workspace</dir>
+      <dir>F:\boot_doubbo\code\boot-order-service-consumer\src\main\java\com\atguigu\gmall</dir>
+      <dir>F:\boot_doubbo\code\boot-order-service-consumer</dir>
+      <dir>C:\Users\dengdagui\Desktop\1111\72_111\poros_71</dir>
+      <dir>F:\boot_doubbo\code\boot-user-service-provider</dir>
+      <dir>D:\71_db\new\workspace</dir>
+      <dir>E:\work\auto_jmeter\code\boot-order-service-consumer</dir>
+    </dirStrings>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="d:\m3" />
+        <option name="userSettingsFile" value="D:\apache-maven-3.6.3\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="dev" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenRunner">
+    <option name="jreName" value="1.8" />
+  </component>
+  <component name="ProjectId" id="1byUYJ1dS16GbljPdzqVP4lcOYv" />
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Android &gt; Lint &gt; Correctness</id>
+          </State>
+          <State>
+            <id>Class structureJava</id>
+          </State>
+          <State>
+            <id>Code maturity issuesJava</id>
+          </State>
+          <State>
+            <id>Code style issuesJava</id>
+          </State>
+          <State>
+            <id>Compiler issuesJava</id>
+          </State>
+          <State>
+            <id>Finalization issuesJava</id>
+          </State>
+          <State>
+            <id>GeneralJavaScript</id>
+          </State>
+          <State>
+            <id>Google Web Toolkit issues</id>
+          </State>
+          <State>
+            <id>Inheritance issuesJava</id>
+          </State>
+          <State>
+            <id>J2ME issuesJava</id>
+          </State>
+          <State>
+            <id>JSP Inspections</id>
+          </State>
+          <State>
+            <id>JUnit issuesJava</id>
+          </State>
+          <State>
+            <id>Java</id>
+          </State>
+          <State>
+            <id>Java 5Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java 7Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java 8Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java 9Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>Java language level migration aidsJava</id>
+          </State>
+          <State>
+            <id>JavaBeans issuesJava</id>
+          </State>
+          <State>
+            <id>JavaScript</id>
+          </State>
+          <State>
+            <id>Javadoc issuesJava</id>
+          </State>
+          <State>
+            <id>Kotlin</id>
+          </State>
+          <State>
+            <id>Numeric issuesJava</id>
+          </State>
+          <State>
+            <id>Performance issuesJava</id>
+          </State>
+          <State>
+            <id>Probable bugsJava</id>
+          </State>
+          <State>
+            <id>Probable bugsKotlin</id>
+          </State>
+          <State>
+            <id>Security issuesJava</id>
+          </State>
+          <State>
+            <id>Serialization issuesJava</id>
+          </State>
+          <State>
+            <id>Spring</id>
+          </State>
+          <State>
+            <id>Spring AOPSpring</id>
+          </State>
+          <State>
+            <id>TestNGJava</id>
+          </State>
+          <State>
+            <id>Threading issuesJava</id>
+          </State>
+          <State>
+            <id>Verbose or redundant code constructsJava</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Java</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelOrder2" value="2" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RequestMappingsPanelWidth2" value="75" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/../boot-user-service-provider/src/com/atguigu/gmall/activemq/perfagent" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path" value="D:/install/node/node" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.31729668" />
+    <property name="recentsLimit" value="9" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.atguigu.gmall" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\boot_doubbo\code\boot-order-service-consumer\src\main\java\com\atguigu\gmall\common\websocket" />
+      <recent name="F:\boot_doubbo\code\boot-order-service-consumer\src\main\java\com\atguigu\gmall\common\websocket\websocketTest" />
+      <recent name="F:\boot_doubbo\code\boot-order-service-consumer\src\main\resources" />
+      <recent name="F:\boot_doubbo\code\boot-order-service-consumer\src\main\java\com\atguigu\gmall\common" />
+      <recent name="F:\boot_doubbo\code\boot-order-service-consumer\src\main\resources\templates" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.atguigu.gmall.controller.perf" />
+      <recent name="com.atguigu.gmall.service.jmeterinter" />
+      <recent name="com.atguigu.gmall.controller.websocket" />
+      <recent name="com.atguigu.gmall.common.websocket" />
+      <recent name="com.atguigu.gmall.controller" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\boot_doubbo\code\boot-order-service-consumer\src\main\resources" />
+      <recent name="F:\boot_doubbo\code\boot-user-service-provider\src\main\resources\mapper" />
+      <recent name="F:\boot_doubbo\code\boot-user-service-provider\src\main\resources" />
+      <recent name="F:\boot_doubbo\code\boot-user-service-provider\src\main\resources\templates\properties" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.SendEmailUtil">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SHOW_IN_DASHBOARD" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_gmall-interface_2" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50686" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+    </configuration>
+    <configuration default="true" type="TomeeConfiguration" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <name>CONTEXT_XML</name>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <name>STAGING</name>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" />
+          <host-id />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50693" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+    </configuration>
+    <configuration default="true" type="WebLogic Instance" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="PORT" value="7001" />
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN_PATH" value="" />
+        <option name="SERVER_NAME" value="myserver" />
+        <option name="DOMAIN_NAME" value="mydomain" />
+        <option name="ADMIN_SERVER_HOST" value="localhost" />
+        <option name="ADMIN_SERVER_PORT" value="7001" />
+        <option name="TARGET_TYPE_NAME" value="TYPE_SERVER" />
+        <option name="CLUSTER_NAME" value="mycluster" />
+        <option name="CONNECT_TO_MANAGED_SERVER" value="false" />
+        <option name="USERNAME" value="weblogic" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="WEBLOGIC_DOMAIN_LOG_FILE" enabled="true" />
+      <predefined_log_file id="WEBLOGIC_SERVER_LOG_FILE" enabled="true" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50695" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTIONS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTIONS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTIONS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+    </configuration>
+    <configuration default="true" type="WebLogic Instance" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="PORT" value="7001" />
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <option name="DOMAIN_PATH" value="" />
+        <option name="SERVER_NAME" value="myserver" />
+        <option name="DOMAIN_NAME" value="mydomain" />
+        <option name="ADMIN_SERVER_HOST" value="localhost" />
+        <option name="ADMIN_SERVER_PORT" value="7001" />
+        <option name="TARGET_TYPE_NAME" value="TYPE_SERVER" />
+        <option name="CLUSTER_NAME" value="mycluster" />
+        <option name="CONNECT_TO_MANAGED_SERVER" value="false" />
+        <option name="USERNAME" value="weblogic" />
+        <option name="PASSWORD" value="" />
+      </server-settings>
+      <predefined_log_file id="WEBLOGIC_DOMAIN_LOG_FILE" enabled="true" />
+      <predefined_log_file id="WEBLOGIC_SERVER_LOG_FILE" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50696" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_gmall-interface" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50650" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <name>CONTEXT_XML</name>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <name>STAGING</name>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" />
+          <host-id />
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50659" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+    </configuration>
+    <configuration name="FileOperate" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.common.utils.FileOperate" />
+      <module name="boot-order-service-consumer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SendEmailUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.common.utils.SendEmailUtil" />
+      <module name="boot-order-service-consumer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SendMail" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.common.utils.SendMail" />
+      <module name="boot-order-service-consumer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="VincioAgentApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ucredit.infra.agent.VincioAgentApplication" />
+      <module name="vincio-agent" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ucredit.infra.agent.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ZipUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.atguigu.gmall.common.utils.ZipUtils" />
+      <module name="boot-order-service-consumer" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atguigu.gmall.common.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="generbean" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="mybatis-generator:generate" />
+                <option value="-e" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/../boot-order-service-consumer" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="BootOrderServiceConsumerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.gmall.BootOrderServiceConsumerApplication" />
+      <module name="boot-order-service-consumer" />
+      <envs />
+    </configuration>
+    <configuration name="BootUserServiceProviderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.atguigu.gmall.BootUserServiceProviderApplication" />
+      <module name="boot-order-service-provider" />
+      <envs />
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="consumer" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.61" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="1.8">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <file path="$PROJECT_DIR$/../boot-order-service-consumer/target/boot-order-service-consumer-0.0.1-SNAPSHOT.jar">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </file>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_gmall-interface" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="50650" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_regexPattern" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Unittests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="py.test">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.SendEmailUtil" />
+      <item itemvalue="Application.SendMail" />
+      <item itemvalue="Application.FileOperate" />
+      <item itemvalue="Application.ZipUtils" />
+      <item itemvalue="Application.VincioAgentApplication" />
+      <item itemvalue="Maven.generbean" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.VincioAgentApplication" />
+        <item itemvalue="Application.ZipUtils" />
+        <item itemvalue="Application.FileOperate" />
+        <item itemvalue="Application.SendMail" />
+        <item itemvalue="Application.SendEmailUtil" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpringBootEndpointsTabSettings">
+    <option name="showLibraryMappings" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\dengdagui\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e5f1420a-7351-4987-8e4a-ee72cf38e240" name="Default" comment="" />
+      <created>1557744553964</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1557744553964</updated>
+      <workItem from="1557744557090" duration="1595000" />
+      <workItem from="1557746218633" duration="105000" />
+      <workItem from="1557811066667" duration="1319000" />
+      <workItem from="1557814407341" duration="230000" />
+      <workItem from="1557826844927" duration="1072000" />
+      <workItem from="1557828058531" duration="4578000" />
+      <workItem from="1557973139541" duration="7587000" />
+      <workItem from="1558000144583" duration="4590000" />
+      <workItem from="1558005268188" duration="727000" />
+      <workItem from="1558059872107" duration="15694000" />
+      <workItem from="1558087184488" duration="5141000" />
+      <workItem from="1558318875832" duration="12102000" />
+      <workItem from="1558336600396" duration="15059000" />
+      <workItem from="1558405288192" duration="26986000" />
+      <workItem from="1558491180036" duration="14782000" />
+      <workItem from="1558515186619" duration="5501000" />
+      <workItem from="1558579100052" duration="14279000" />
+      <workItem from="1558600275529" duration="664000" />
+      <workItem from="1558600983084" duration="9342000" />
+      <workItem from="1558663768011" duration="27733000" />
+      <workItem from="1558922989881" duration="17889000" />
+      <workItem from="1558946928348" duration="8683000" />
+      <workItem from="1559009788009" duration="9286000" />
+      <workItem from="1559026617569" duration="13210000" />
+      <workItem from="1559095942393" duration="1468000" />
+      <workItem from="1559104725490" duration="18653000" />
+      <workItem from="1559182442452" duration="25239000" />
+      <workItem from="1559268695559" duration="26002000" />
+      <workItem from="1559297450064" duration="2677000" />
+      <workItem from="1559528049726" duration="14559000" />
+      <workItem from="1559555147129" duration="5531000" />
+      <workItem from="1559614252865" duration="21596000" />
+      <workItem from="1559702662094" duration="15025000" />
+      <workItem from="1559726329061" duration="2096000" />
+      <workItem from="1559728520835" duration="3833000" />
+      <workItem from="1559787098751" duration="23298000" />
+      <workItem from="1559811866608" duration="4651000" />
+      <workItem from="1559816642314" duration="3039000" />
+      <workItem from="1560132755550" duration="7311000" />
+      <workItem from="1560142687296" duration="1382000" />
+      <workItem from="1560145235543" duration="6266000" />
+      <workItem from="1560151569690" duration="460000" />
+      <workItem from="1560152064655" duration="881000" />
+      <workItem from="1560153018240" duration="4424000" />
+      <workItem from="1560157509843" duration="834000" />
+      <workItem from="1560158393178" duration="6021000" />
+      <workItem from="1560219179762" duration="28888000" />
+      <workItem from="1560305712143" duration="19594000" />
+      <workItem from="1560332456617" duration="5277000" />
+      <workItem from="1560392068275" duration="28673000" />
+      <workItem from="1560478234906" duration="24171000" />
+      <workItem from="1560509086486" duration="1882000" />
+      <workItem from="1560738001569" duration="20427000" />
+      <workItem from="1560763791416" duration="6063000" />
+      <workItem from="1560823400305" duration="8006000" />
+      <workItem from="1560837176568" duration="2875000" />
+      <workItem from="1560847453498" duration="10160000" />
+      <workItem from="1560910307987" duration="18598000" />
+      <workItem from="1560996962770" duration="19911000" />
+      <workItem from="1561082989003" duration="26682000" />
+      <workItem from="1561342212798" duration="5099000" />
+      <workItem from="1561350953192" duration="541000" />
+      <workItem from="1561351602005" duration="613000" />
+      <workItem from="1561355039612" duration="3945000" />
+      <workItem from="1561363164857" duration="8255000" />
+      <workItem from="1561373151558" duration="1645000" />
+      <workItem from="1561428755237" duration="17507000" />
+      <workItem from="1561460182601" duration="1142000" />
+      <workItem from="1561515000987" duration="26356000" />
+      <workItem from="1561602206167" duration="18892000" />
+      <workItem from="1561974942735" duration="3426000" />
+      <workItem from="1562912776080" duration="4279000" />
+      <workItem from="1563433101658" duration="13515000" />
+      <workItem from="1563510813327" duration="11881000" />
+      <workItem from="1563770822520" duration="9985000" />
+      <workItem from="1563857249647" duration="9590000" />
+      <workItem from="1563866937615" duration="795000" />
+      <workItem from="1563871025239" duration="8699000" />
+      <workItem from="1563937310234" duration="8616000" />
+      <workItem from="1563951018308" duration="7844000" />
+      <workItem from="1564020838683" duration="27312000" />
+      <workItem from="1564114904808" duration="12112000" />
+      <workItem from="1564375647057" duration="17026000" />
+      <workItem from="1564453036017" duration="29028000" />
+      <workItem from="1564539172904" duration="11113000" />
+      <workItem from="1564625921781" duration="9027000" />
+      <workItem from="1564649723234" duration="6893000" />
+      <workItem from="1564712096213" duration="6608000" />
+      <workItem from="1565001665587" duration="489000" />
+      <workItem from="1565059668883" duration="670000" />
+      <workItem from="1565152386381" duration="20159000" />
+      <workItem from="1565173508860" duration="2276000" />
+      <workItem from="1565231530795" duration="16356000" />
+      <workItem from="1565332592872" duration="8655000" />
+      <workItem from="1565839714140" duration="15635000" />
+      <workItem from="1565922948864" duration="10386000" />
+      <workItem from="1566181659509" duration="13649000" />
+      <workItem from="1566267672910" duration="22869000" />
+      <workItem from="1566353938558" duration="10107000" />
+      <workItem from="1566440423058" duration="17371000" />
+      <workItem from="1566526742192" duration="17777000" />
+      <workItem from="1566785967666" duration="13980000" />
+      <workItem from="1566872585656" duration="33000" />
+      <workItem from="1566874180990" duration="17292000" />
+      <workItem from="1566958813211" duration="23478000" />
+      <workItem from="1567045428565" duration="23702000" />
+      <workItem from="1567131452488" duration="15169000" />
+      <workItem from="1567390889815" duration="22588000" />
+      <workItem from="1567477233683" duration="8901000" />
+      <workItem from="1567563848403" duration="4295000" />
+      <workItem from="1567581224030" duration="10141000" />
+      <workItem from="1567650354639" duration="9526000" />
+      <workItem from="1567736299157" duration="9597000" />
+      <workItem from="1567764226414" duration="662000" />
+      <workItem from="1567995708715" duration="16063000" />
+      <workItem from="1568017267266" duration="9423000" />
+      <workItem from="1568082022693" duration="7916000" />
+      <workItem from="1568099767600" duration="5468000" />
+      <workItem from="1568199028316" duration="867000" />
+      <workItem from="1568254809429" duration="19152000" />
+      <workItem from="1568341249390" duration="18938000" />
+      <workItem from="1568427877183" duration="22515000" />
+      <workItem from="1568599995295" duration="1352000" />
+      <workItem from="1568605161654" duration="21033000" />
+      <workItem from="1568689346536" duration="8201000" />
+      <workItem from="1568772725283" duration="24597000" />
+      <workItem from="1568859191464" duration="9398000" />
+      <workItem from="1568873330868" duration="10555000" />
+      <workItem from="1568946618029" duration="14072000" />
+      <workItem from="1569205104374" duration="6714000" />
+      <workItem from="1569291679005" duration="24527000" />
+      <workItem from="1569378143707" duration="16426000" />
+      <workItem from="1569466057387" duration="19644000" />
+      <workItem from="1569550790354" duration="3626000" />
+      <workItem from="1569563487959" duration="8043000" />
+      <workItem from="1569572060811" duration="1725000" />
+      <workItem from="1569573825834" duration="7824000" />
+      <workItem from="1569723930566" duration="5526000" />
+      <workItem from="1569730831610" duration="16391000" />
+      <workItem from="1569749118585" duration="635000" />
+      <workItem from="1569749781921" duration="832000" />
+      <workItem from="1569750640087" duration="302000" />
+      <workItem from="1569750974880" duration="1148000" />
+      <workItem from="1569752176736" duration="154000" />
+      <workItem from="1569752358503" duration="1663000" />
+      <workItem from="1569754622730" duration="1024000" />
+      <workItem from="1569755696439" duration="130000" />
+      <workItem from="1569810072675" duration="3082000" />
+      <workItem from="1569813324651" duration="1265000" />
+      <workItem from="1569814720828" duration="1246000" />
+      <workItem from="1569819270055" duration="889000" />
+      <workItem from="1569820198349" duration="1009000" />
+      <workItem from="1569821247719" duration="441000" />
+      <workItem from="1569821724976" duration="2025000" />
+      <workItem from="1569823824756" duration="2237000" />
+      <workItem from="1569826113140" duration="4758000" />
+      <workItem from="1569832034676" duration="7101000" />
+      <workItem from="1569839743012" duration="1991000" />
+      <workItem from="1569841938342" duration="612000" />
+      <workItem from="1570503100466" duration="1104000" />
+      <workItem from="1570504308830" duration="793000" />
+      <workItem from="1570505155449" duration="802000" />
+      <workItem from="1570509732193" duration="1374000" />
+      <workItem from="1570511141662" duration="5038000" />
+      <workItem from="1570599073976" duration="1480000" />
+      <workItem from="1570682765458" duration="5842000" />
+      <workItem from="1570764456895" duration="16058000" />
+      <workItem from="1570846476785" duration="28710000" />
+      <workItem from="1571019749930" duration="236000" />
+      <workItem from="1571020078911" duration="12412000" />
+      <workItem from="1571038676608" duration="2809000" />
+      <workItem from="1571041555514" duration="3425000" />
+      <workItem from="1571045031764" duration="746000" />
+      <workItem from="1571045930606" duration="5065000" />
+      <workItem from="1571051824746" duration="303000" />
+      <workItem from="1571106047235" duration="3158000" />
+      <workItem from="1571110484623" duration="18638000" />
+      <workItem from="1571205749420" duration="12311000" />
+      <workItem from="1571278564174" duration="11484000" />
+      <workItem from="1571293621042" duration="4794000" />
+      <workItem from="1571298731578" duration="302000" />
+      <workItem from="1571299069693" duration="3546000" />
+      <workItem from="1571303478488" duration="1724000" />
+      <workItem from="1571307288677" duration="4402000" />
+      <workItem from="1571373914594" duration="7268000" />
+      <workItem from="1571800400220" duration="1886000" />
+      <workItem from="1571987700182" duration="1054000" />
+      <workItem from="1571997998031" duration="3003000" />
+      <workItem from="1572246708916" duration="4510000" />
+      <workItem from="1572317389631" duration="4495000" />
+      <workItem from="1572509108292" duration="4836000" />
+      <workItem from="1572595074894" duration="3073000" />
+      <workItem from="1572598781188" duration="6803000" />
+      <workItem from="1572942224438" duration="3741000" />
+      <workItem from="1573179392841" duration="12387000" />
+      <workItem from="1573199559390" duration="3597000" />
+      <workItem from="1573203221441" duration="820000" />
+      <workItem from="1573204121874" duration="5442000" />
+      <workItem from="1573209858348" duration="440000" />
+      <workItem from="1573211210063" duration="719000" />
+      <workItem from="1573543960424" duration="11757000" />
+      <workItem from="1573556214946" duration="592000" />
+      <workItem from="1573611434436" duration="11096000" />
+      <workItem from="1575020929907" duration="5280000" />
+      <workItem from="1575253746734" duration="6440000" />
+      <workItem from="1575263108980" duration="399000" />
+      <workItem from="1575264588084" duration="505000" />
+      <workItem from="1575265156227" duration="632000" />
+      <workItem from="1575265823728" duration="475000" />
+      <workItem from="1575267493044" duration="9325000" />
+      <workItem from="1575339355392" duration="9789000" />
+      <workItem from="1575361235707" duration="3949000" />
+      <workItem from="1575366553309" duration="7034000" />
+      <workItem from="1575425560591" duration="20695000" />
+      <workItem from="1575512029148" duration="11475000" />
+      <workItem from="1575601719592" duration="1783000" />
+      <workItem from="1575603576322" duration="1207000" />
+      <workItem from="1575607132615" duration="10843000" />
+      <workItem from="1575858856539" duration="21483000" />
+      <workItem from="1575944028504" duration="17137000" />
+      <workItem from="1576030432856" duration="14279000" />
+      <workItem from="1576053625717" duration="7150000" />
+      <workItem from="1576116953169" duration="3061000" />
+      <workItem from="1587222671418" duration="883000" />
+      <workItem from="1587223600940" duration="1667000" />
+      <workItem from="1587225300267" duration="1096000" />
+      <workItem from="1587226424036" duration="413000" />
+      <workItem from="1587226865340" duration="377000" />
+      <workItem from="1587227280159" duration="385000" />
+      <workItem from="1587227707544" duration="2702000" />
+      <workItem from="1587257867244" duration="692000" />
+      <workItem from="1587258599856" duration="542000" />
+      <workItem from="1587259183011" duration="3904000" />
+      <workItem from="1587263828103" duration="1804000" />
+      <workItem from="1587265665619" duration="6565000" />
+      <workItem from="1587273398942" duration="171000" />
+      <workItem from="1587273888585" duration="1867000" />
+      <workItem from="1587275948297" duration="15357000" />
+      <workItem from="1587356434215" duration="2523000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="1992618000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1600479621797">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1600479621797" />
+    <state x="230" y="154" key="com.intellij.ide.util.TipDialog" timestamp="1600479553990">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="230" y="154" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1600479553990" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://F:/zhengxin/agent/workspace/src/main/java/com/ucredit/infra/agent/common/util/PersonTaxCalculationUtil.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="574" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/../boot-order-service-consumer/src/main/java/com/atguigu/gmall/service/impl/UserServerImpl.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="743" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/../boot-order-service-consumer/src/main/java/com/atguigu/gmall/common/utils/ZipUtils.java</url>
+          <line>37</line>
+          <properties class="com.atguigu.gmall.common.utils.ZipUtils" method="compress">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="775" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="((PerfStatisticsQuery)this).property" custom="com.atguigu.gmall.common.web.PerfStatisticsQuery" />
+        <watch expression="criterions.get(0)" />
+        <watch expression="((CommandVariationUtil)((BootReportDataRequestReceive)this).commandVariationUtil).logger" custom="com.atguigu.gmall.common.utils.CommandVariationUtil,com.atguigu.gmall.activemq.topic.BootReportDataRequestReceive" />
+        <watch expression="((CommandVariationUtil)((BootReportDataRequestReceive)this).commandVariationUtil).logger" language="JAVA" custom="com.atguigu.gmall.common.utils.CommandVariationUtil,com.atguigu.gmall.activemq.topic.BootReportDataRequestReceive" />
+      </configuration>
+      <configuration name="Application">
+        <watch expression="totalSalary.compareTo(BigDecimal.ZERO)" />
+        <watch expression=" totalSalary.compareTo(new BigDecimal(TAX_MIN))" />
+        <watch expression=" totalSalary.compareTo(new BigDecimal(TAX_MIN))" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArquillianSettingsConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>vincio-agent:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31729668" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Python 2.7.2 (D:\install\python\python.exe) interpreter library</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31729668" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring|boot-order-service-consumer</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31729668" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.2.3</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.31729668" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+  <component name="mavenExecuteGoalHistory">
+    <option value="" />
+  </component>
+</project>

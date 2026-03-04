@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  boot-order-service:
+    build: .
+    image: boot-order-service:1.0.0
+    container_name: boot-order-service-consumer
+    network_mode: "host"
+    environment:
+      - TZ=Asia/Shanghai
+      - JAVA8_OPTS=-server -Xms512m -Xmx1024m -XX:+UseG1GC -XX:MaxGCPauseMillis=150 -Djava.awt.headless=true -Dspring.jmx.enabled=false
+      - JAVA17_OPTS=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED --add-opens java.base/java.net=ALL-UNNAMED
+      - JAVA_HOME=/opt/java/openjdk
+      - JAVA8_HOME=/app/jdk8u412-b08
+      - SPRING_CONFIG_LOCATION=file:/app/config/
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+          cpus: '2.0'
+        reservations:
+          memory: 1G
+          cpus: '1.0'
+    restart: unless-stopped
+    volumes:
+      # 使用统一的config目录挂载
+      - ./config:/app/config:rw
+      - ./jmeter-data:/usr/local/jmeter/mars:rw
+      - ./app-logs:/app/logs:rw
+    user: "0:0"
+    working_dir: /app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8089/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 120s

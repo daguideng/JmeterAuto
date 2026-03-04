@@ -1,0 +1,57 @@
+# 单阶段构建 - 简化版本
+FROM eclipse-temurin:17-jre-jammy
+
+# 设置时区
+ENV TZ=Asia/Shanghai
+
+# 一次性安装所有必要工具
+RUN echo 'Acquire::Retries "3";' > /etc/apt/apt.conf.d/80-retries && \
+    echo 'Acquire::http::Timeout "120";' > /etc/apt/apt.conf.d/99-timeout && \
+    sed -i 's|http://.*ubuntu.com|http://mirrors.aliyun.com|g' /etc/apt/sources.list && \
+    apt-get update -qq --fix-missing && \
+    apt-get install -y --no-install-recommends \
+        ntpdate \
+        lsof \
+        ca-certificates && \
+    ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && \
+    echo $TZ > /etc/timezone && \
+    update-ca-certificates && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+WORKDIR /app
+
+# 复制应用文件
+COPY --chown=root:root jdk8u412-b08 /app/jdk8u412-b08
+COPY --chown=root:root apache-jmeter-5.6.3 /usr/local/jmeter/agent/inter/bootServiceProvide/apache-jmeter-5.6.3
+COPY --chown=root:root target/jmeter-agent-0.0.1.jar /usr/local/jmeter/agent/inter/bootServiceProvide/agent-0.0.1.jar
+COPY --chown=root:root src/main/resources/application.properties /usr/local/jmeter/agent/inter/bootServiceProvide/
+COPY --chown=root:root src/main/resources/application.yml /usr/local/jmeter/agent/inter/bootServiceProvide/
+
+# 创建必要的目录结构
+RUN mkdir -p /usr/local/jmeter/agent/inter/agentDownStore
+
+# 设置环境变量
+ENV JAVA_HOME=/opt/java/openjdk \
+    JAVA8_HOME=/app/jdk8u412-b08 \
+    JMETER_HOME=/usr/local/jmeter/agent/inter/bootServiceProvide/apache-jmeter-5.6.3 \
+    PATH=/opt/java/openjdk/bin:$JAVA8_HOME/bin:$JMETER_HOME/bin:$PATH
+
+# 设置执行权限
+RUN chmod +x /usr/local/jmeter/agent/inter/bootServiceProvide/agent-0.0.1.jar && \
+    chmod +x /usr/local/jmeter/agent/inter/bootServiceProvide/apache-jmeter-5.6.3/bin/* && \
+    chmod +x /app/jdk8u412-b08/bin/*
+
+# 验证安装
+RUN echo "=== 验证工具安装 ===" && \
+    which lsof && which ntpdate && \
+    echo "=== 验证Java ===" && \
+    java -version && \
+    /app/jdk8u412-b08/bin/java -version
+
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD [ -f /usr/local/jmeter/agent/inter/bootServiceProvide/agent-0.0.1.jar ] && exit 0 || exit 1
+
+# 启动命令
+CMD ["/app/jdk8u412-b08/bin/java", "-jar", "/usr/local/jmeter/agent/inter/bootServiceProvide/agent-0.0.1.jar"]

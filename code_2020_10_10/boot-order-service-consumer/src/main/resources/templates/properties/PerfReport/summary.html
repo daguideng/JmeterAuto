@@ -1,0 +1,37 @@
+<div style='margin-top: 20px;'>
+    <div class="panel panel-default" style="box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+        <div class="panel-heading" style="background-color: #f5f5f5; padding: 10px 15px; border-bottom: 1px solid #ddd;">
+            <h3 class="panel-title" style="margin-top: 0; margin-bottom: 0; font-size: 16px; color: #333;">测试概览</h3>
+        </div>
+        
+        <div class="panel-body" style="padding: 15px;">
+            <h1 style="color: #337ab7; margin-top: 0; margin-bottom: 20px; font-size: 24px;">性能测试结果</h1>
+            
+            <table class="table table-hover table-condensed" style="width: 100%; max-width: 600px;">
+                <tbody>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="width: 30%; font-weight: bold; padding: 10px;">开始时间:</td>
+                        <td style="padding: 10px;">{0}</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="width: 30%; font-weight: bold; padding: 10px;">结束时间:</td>
+                        <td style="padding: 10px;">{1}</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #eee;">
+                        <td style="width: 30%; font-weight: bold; padding: 10px;">耗时:</td>
+                        <td style="padding: 10px;">{2}</td>
+                    </tr>
+                    <tr>
+                        <td style="width: 30%; font-weight: bold; padding: 10px;">结果:</td>
+                        <td style="padding: 10px;">
+                            <span class="status-pass" style="margin-right: 10px;">Pass: <strong>{3}</strong></span>
+                            <span class="status-fail" style="margin-right: 10px;">Fail: <strong>{4}</strong></span>
+                            <span class="status-warning" style="margin-right: 10px;">警告: <strong>{5}</strong></span>
+                            <span class="status-except">未知: <strong>{6}</strong></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

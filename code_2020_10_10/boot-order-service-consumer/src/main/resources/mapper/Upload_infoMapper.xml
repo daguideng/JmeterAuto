@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Upload_infoMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Upload_info" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="uploadtime" property="uploadtime" jdbcType="VARCHAR" />
+    <result column="lastruntime" property="lastruntime" jdbcType="VARCHAR" />
+    <result column="perflastruntime" property="perflastruntime" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="scriptname" property="scriptname" jdbcType="VARCHAR" />
+    <result column="interfacename" property="interfacename" jdbcType="VARCHAR" />
+    <result column="scripttype" property="scripttype" jdbcType="VARCHAR" />
+    <result column="operationtype" property="operationtype" jdbcType="VARCHAR" />
+    <result column="scriptpath" property="scriptpath" jdbcType="VARCHAR" />
+    <result column="runbutton" property="runbutton" jdbcType="VARCHAR" />
+    <result column="scriptrunorder" property="scriptrunorder" jdbcType="VARCHAR" />
+    <result column="testname0" property="testname0" jdbcType="VARCHAR" />
+    <result column="testname1" property="testname1" jdbcType="VARCHAR" />
+    <result column="testname2" property="testname2" jdbcType="VARCHAR" />
+    <result column="testname3" property="testname3" jdbcType="VARCHAR" />
+    <result column="urL0" property="url0" jdbcType="VARCHAR" />
+    <result column="urL1" property="url1" jdbcType="VARCHAR" />
+    <result column="urL2" property="url2" jdbcType="VARCHAR" />
+    <result column="urL3" property="url3" jdbcType="VARCHAR" />
+    <result column="urL0replace" property="url0replace" jdbcType="VARCHAR" />
+    <result column="urL1replace" property="url1replace" jdbcType="VARCHAR" />
+    <result column="urL2replace" property="url2replace" jdbcType="VARCHAR" />
+    <result column="urL3replace" property="url3replace" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="VARCHAR" />
+    <result column="interstate" property="interstate" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uploadtime, lastruntime,perflastruntime,username, scriptname, interfacename, scripttype, operationtype,
+    scriptpath, runbutton, scriptrunorder, testname0, testname1, testname2, testname3, 
+    urL0, urL1, urL2, urL3, urL0replace, urL1replace, urL2replace, urL3replace, `state`,interstate
+  </sql>
+
+
+
+
+
+
+  <!--  Map<String,Object> getByPrimaryKey(Integer id) -->
+  <select id="getByPrimaryKey"     resultType="map" >
+
+    select *  from upload_info where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from upload_info
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from upload_info
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+
+  <select id="selectByRunState"  parameterType="java.lang.String"   resultType="com.atguigu.gmall.entity.Upload_info">
+    select * from upload_info where state = #{state,jdbcType=VARCHAR}
+  </select>
+
+
+
+  <select id="selectOrderByLimit" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from upload_info
+    order by id desc limit 0,1
+  </select>
+
+
+  <!--  更新性能运行状态  -->
+  <update id="updatePerfRunState"   >
+    update  upload_info set state = #{state,jdbcType=VARCHAR},perflastruntime = #{perflastruntime,jdbcType=VARCHAR}  where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <!--  更新接口运行状态  -->
+  <update id="updateInterRunState"   >
+    update  upload_info set interstate = #{interstate,jdbcType=VARCHAR},lastruntime = #{lastruntime,jdbcType=VARCHAR}  where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <!--  逻辑删除数据 -->
+  <update id="deleteScriptState"   >
+    update  upload_info set interstate = #{interstate,jdbcType=VARCHAR},lastruntime = #{lastruntime,jdbcType=VARCHAR}  where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+<!-- order by id DESC -->
+  <select id="queryApiExecuteLog4Manage" resultType="map">
+    SELECT
+    *
+    FROM
+    (
+    select * from upload_info order by id DESC
+    )t
+    <if test="criterions != null">
+      <include refid="where_clause" />
+      order by id DESC
+    </if>
+  </select>
+
+
+  <select id="queryApiExecuteSumCount" resultType="map">
+    select * from upload_info
+    <if test="criterions != null">
+      <include refid="where_clause" />
+    </if>
+  </select>
+
+
+  <select id="selectAllByPage"    resultType="com.atguigu.gmall.entity.Upload_info">
+    select * from upload_info
+  </select>
+
+
+
+  <sql id="where_clause">
+    <where>
+      <foreach collection="criterions" index="index" item="criterion"
+               open="" separator="" close="">
+        <choose>
+          <when test="criterion.noValue">
+            and ${criterion.condition}
+          </when>
+          <when test="criterion.singleValue">
+            and ${criterion.condition} #{criterion.value}
+          </when>
+          <when test="criterion.betweenValue">
+            and ${criterion.condition} #{criterion.value} and
+            #{criterion.secondValue}
+          </when>
+          <when test="criterion.listValue">
+            and ${criterion.condition}
+            <foreach collection="criterion.value" item="listItem"
+                     open="(" close=")" separator=",">
+              #{listItem}
+            </foreach>
+          </when>
+        </choose>
+      </foreach>
+    </where>
+  </sql>
+
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Upload_info" >
+    insert into upload_info (uploadtime, lastruntime,
+      username, scriptname, interfacename, 
+      scripttype, operationtype, scriptpath, 
+      runbutton, scriptrunorder, testname0, 
+      testname1, testname2, testname3, 
+      urL0, urL1, urL2, urL3, 
+      urL0replace, urL1replace, urL2replace, 
+      urL3replace, state)
+    values (#{uploadtime,jdbcType=VARCHAR}, #{lastruntime,jdbcType=VARCHAR},
+      #{username,jdbcType=VARCHAR}, #{scriptname,jdbcType=VARCHAR}, #{interfacename,jdbcType=VARCHAR}, 
+      #{scripttype,jdbcType=VARCHAR}, #{operationtype,jdbcType=VARCHAR}, #{scriptpath,jdbcType=VARCHAR}, 
+      #{runbutton,jdbcType=VARCHAR}, #{scriptrunorder,jdbcType=VARCHAR}, #{testname0,jdbcType=VARCHAR}, 
+      #{testname1,jdbcType=VARCHAR}, #{testname2,jdbcType=VARCHAR}, #{testname3,jdbcType=VARCHAR}, 
+      #{url0,jdbcType=VARCHAR}, #{url1,jdbcType=VARCHAR}, #{url2,jdbcType=VARCHAR}, #{url3,jdbcType=VARCHAR}, 
+      #{url0replace,jdbcType=VARCHAR}, #{url1replace,jdbcType=VARCHAR}, #{url2replace,jdbcType=VARCHAR}, 
+      #{url3replace,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR})
+  </insert>
+
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Upload_info" >
+    insert into upload_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uploadtime != null" >
+        uploadtime,
+      </if>
+      <if test="lastruntime != null" >
+        lastruntime,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="scriptname != null" >
+        scriptname,
+      </if>
+      <if test="interfacename != null" >
+        interfacename,
+      </if>
+      <if test="scripttype != null" >
+        scripttype,
+      </if>
+      <if test="operationtype != null" >
+        operationtype,
+      </if>
+      <if test="scriptpath != null" >
+        scriptpath,
+      </if>
+      <if test="runbutton != null" >
+        runbutton,
+      </if>
+      <if test="scriptrunorder != null" >
+        scriptrunorder,
+      </if>
+      <if test="testname0 != null" >
+        testname0,
+      </if>
+      <if test="testname1 != null" >
+        testname1,
+      </if>
+      <if test="testname2 != null" >
+        testname2,
+      </if>
+      <if test="testname3 != null" >
+        testname3,
+      </if>
+      <if test="url0 != null" >
+        urL0,
+      </if>
+      <if test="url1 != null" >
+        urL1,
+      </if>
+      <if test="url2 != null" >
+        urL2,
+      </if>
+      <if test="url3 != null" >
+        urL3,
+      </if>
+      <if test="url0replace != null" >
+        urL0replace,
+      </if>
+      <if test="url1replace != null" >
+        urL1replace,
+      </if>
+      <if test="url2replace != null" >
+        urL2replace,
+      </if>
+      <if test="url3replace != null" >
+        urL3replace,
+      </if>
+      <if test="state != null" >
+        `state`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uploadtime != null" >
+        #{uploadtime,jdbcType=VARCHAR},
+      </if>
+      <if test="lastruntime != null" >
+        #{lastruntime,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="scriptname != null" >
+        #{scriptname,jdbcType=VARCHAR},
+      </if>
+      <if test="interfacename != null" >
+        #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="scripttype != null" >
+        #{scripttype,jdbcType=VARCHAR},
+      </if>
+      <if test="operationtype != null" >
+        #{operationtype,jdbcType=VARCHAR},
+      </if>
+      <if test="scriptpath != null" >
+        #{scriptpath,jdbcType=VARCHAR},
+      </if>
+      <if test="runbutton != null" >
+        #{runbutton,jdbcType=VARCHAR},
+      </if>
+      <if test="scriptrunorder != null" >
+        #{scriptrunorder,jdbcType=VARCHAR},
+      </if>
+      <if test="testname0 != null" >
+        #{testname0,jdbcType=VARCHAR},
+      </if>
+      <if test="testname1 != null" >
+        #{testname1,jdbcType=VARCHAR},
+      </if>
+      <if test="testname2 != null" >
+        #{testname2,jdbcType=VARCHAR},
+      </if>
+      <if test="testname3 != null" >
+        #{testname3,jdbcType=VARCHAR},
+      </if>
+      <if test="url0 != null" >
+        #{url0,jdbcType=VARCHAR},
+      </if>
+      <if test="url1 != null" >
+        #{url1,jdbcType=VARCHAR},
+      </if>
+      <if test="url2 != null" >
+        #{url2,jdbcType=VARCHAR},
+      </if>
+      <if test="url3 != null" >
+        #{url3,jdbcType=VARCHAR},
+      </if>
+      <if test="url0replace != null" >
+        #{url0replace,jdbcType=VARCHAR},
+      </if>
+      <if test="url1replace != null" >
+        #{url1replace,jdbcType=VARCHAR},
+      </if>
+      <if test="url2replace != null" >
+        #{url2replace,jdbcType=VARCHAR},
+      </if>
+      <if test="url3replace != null" >
+        #{url3replace,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Upload_info" >
+    update upload_info
+    <set >
+      <if test="uploadtime != null" >
+        uploadtime = #{uploadtime,jdbcType=VARCHAR},
+      </if>
+      <if test="lastruntime != null" >
+        lastruntime = #{lastruntime,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="scriptname != null" >
+        scriptname = #{scriptname,jdbcType=VARCHAR},
+      </if>
+      <if test="interfacename != null" >
+        interfacename = #{interfacename,jdbcType=VARCHAR},
+      </if>
+      <if test="scripttype != null" >
+        scripttype = #{scripttype,jdbcType=VARCHAR},
+      </if>
+      <if test="operationtype != null" >
+        operationtype = #{operationtype,jdbcType=VARCHAR},
+      </if>
+      <if test="scriptpath != null" >
+        scriptpath = #{scriptpath,jdbcType=VARCHAR},
+      </if>
+      <if test="runbutton != null" >
+        runbutton = #{runbutton,jdbcType=VARCHAR},
+      </if>
+      <if test="scriptrunorder != null" >
+        scriptrunorder = #{scriptrunorder,jdbcType=VARCHAR},
+      </if>
+      <if test="testname0 != null" >
+        testname0 = #{testname0,jdbcType=VARCHAR},
+      </if>
+      <if test="testname1 != null" >
+        testname1 = #{testname1,jdbcType=VARCHAR},
+      </if>
+      <if test="testname2 != null" >
+        testname2 = #{testname2,jdbcType=VARCHAR},
+      </if>
+      <if test="testname3 != null" >
+        testname3 = #{testname3,jdbcType=VARCHAR},
+      </if>
+      <if test="url0 != null" >
+        urL0 = #{url0,jdbcType=VARCHAR},
+      </if>
+      <if test="url1 != null" >
+        urL1 = #{url1,jdbcType=VARCHAR},
+      </if>
+      <if test="url2 != null" >
+        urL2 = #{url2,jdbcType=VARCHAR},
+      </if>
+      <if test="url3 != null" >
+        urL3 = #{url3,jdbcType=VARCHAR},
+      </if>
+      <if test="url0replace != null" >
+        urL0replace = #{url0replace,jdbcType=VARCHAR},
+      </if>
+      <if test="url1replace != null" >
+        urL1replace = #{url1replace,jdbcType=VARCHAR},
+      </if>
+      <if test="url2replace != null" >
+        urL2replace = #{url2replace,jdbcType=VARCHAR},
+      </if>
+      <if test="url3replace != null" >
+        urL3replace = #{url3replace,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        `state` = #{state,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Upload_info" >
+    update upload_info
+    set uploadtime = #{uploadtime,jdbcType=VARCHAR},
+      lastruntime = #{lastruntime,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      scriptname = #{scriptname,jdbcType=VARCHAR},
+      interfacename = #{interfacename,jdbcType=VARCHAR},
+      scripttype = #{scripttype,jdbcType=VARCHAR},
+      operationtype = #{operationtype,jdbcType=VARCHAR},
+      scriptpath = #{scriptpath,jdbcType=VARCHAR},
+      runbutton = #{runbutton,jdbcType=VARCHAR},
+      scriptrunorder = #{scriptrunorder,jdbcType=VARCHAR},
+      testname0 = #{testname0,jdbcType=VARCHAR},
+      testname1 = #{testname1,jdbcType=VARCHAR},
+      testname2 = #{testname2,jdbcType=VARCHAR},
+      testname3 = #{testname3,jdbcType=VARCHAR},
+      urL0 = #{url0,jdbcType=VARCHAR},
+      urL1 = #{url1,jdbcType=VARCHAR},
+      urL2 = #{url2,jdbcType=VARCHAR},
+      urL3 = #{url3,jdbcType=VARCHAR},
+      urL0replace = #{url0replace,jdbcType=VARCHAR},
+      urL1replace = #{url1replace,jdbcType=VARCHAR},
+      urL2replace = #{url2replace,jdbcType=VARCHAR},
+      urL3replace = #{url3replace,jdbcType=VARCHAR},
+      `state` = #{state,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

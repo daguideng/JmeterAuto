@@ -1,0 +1,113 @@
+spring:
+  
+  # Enable debug logging for bean creation
+  main:
+    log-startup-info: true
+  
+  # HTTP字符编码配置
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  
+  datasource:
+#   数据源基本配置
+    username: appium
+#   username: @username@
+    password: nopass.88888888
+#   password: @password@
+    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://192.168.88.218:3306/jmeterboot
+#    url: jdbc:mysql://49.232.24.147:3306/jmeterboot
+    url: jdbc:mysql://10.43.27.231:3306/jmeterboot?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+#   url: @url@
+    type: com.alibaba.druid.pool.DruidDataSource
+#   数据源其他配置
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+
+  activemq:
+    user: admin
+#   user: @user@
+    password: admin
+#    broker-url: tcp://172.21.152.95:61616
+#    broker-url: tcp://192.168.88.217:61616
+#    broker-url: tcp://49.232.24.147:61616
+    broker-url: tcp://10.43.27.231:61616
+    #broker-url: tcp://192.168.88.217:61616
+#   broker-url: @broker-url@
+    pool:
+      enabled: true
+      max-connections: 50
+  #文件上传大小限制：
+  servlet:
+    multipart:
+      max-file-size: 80Mb
+      max-request-size: 500Mb
+      location: /usr/local/jmeter/pathparameter/
+
+
+
+
+queueNamePerf: publish.perf.queue
+topicNamePerf: publish.topic.testSpringboot.perf.Topic
+topicNameExceptionLog: publish.topic.testSpringboot.log.topic
+mybatis:
+  config-location: classpath:/mybatis-config.xml
+  mapper-locations: classpath:/mapper/*.xml
+
+
+#actuator
+management:
+  port : 9091
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: loggers,beans
+    nabled-by-default: true
+    health:
+      show-details: always
+  health:
+    diskspace:
+      enabled: true
+    enabled: true
+# 描述信息
+info:
+  blog-url: http://blog.chinaunix.net/space.php?uid=26841578
+  author: dagui.deng
+#  version: @project.version@
+
+# Jmeter报告粒度配置
+Jjmeter:
+  reportgenerator:
+    overall_granularity: 5000
+# 可以关闭制定的端点
+#management:
+#  endpoint:
+#    shutdown:
+#      enabled: false
+#management.endpoints.enabled-by-default=true
+#management.endpoints.web.exposure.include=*
+#management.endpoints.web.exposure.exclude=loggers,beans
+
+#management.endpoint.health.show-details=always
+#management.health.diskspace.enabled=true
+#management.health.enabled=true
+

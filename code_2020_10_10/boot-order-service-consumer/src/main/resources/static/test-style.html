@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>样式测试</title>
+    <style type="text/css">
+        /* 结果状态标签样式 */
+        .status-pass {
+            background-color: #dff0d8;
+            color: #3c763d;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .status-fail {
+            background-color: #f2dede;
+            color: #a94442;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .status-warning {
+            background-color: #fcf8e3;
+            color: #8a6d3b;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        
+        .status-except {
+            background-color: #e0e0e0;
+            color: #555;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>样式测试</h1>
+    <p>以下是不同状态标签的样式：</p>
+    <div>
+        <span class="status-pass">通过 (Pass)</span>
+    </div>
+    <div style="margin-top: 10px;">
+        <span class="status-fail">失败 (Fail)</span>
+    </div>
+    <div style="margin-top: 10px;">
+        <span class="status-warning">警告 (Warning)</span>
+    </div>
+    <div style="margin-top: 10px;">
+        <span class="status-except">异常 (Exception)</span>
+    </div>
+</body>
+</html>

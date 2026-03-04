@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.ApdexMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Apdex" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="threads" property="threads" jdbcType="VARCHAR" />
+    <result column="apdex" property="apdex" jdbcType="VARCHAR" />
+    <result column="tolerationthreshold" property="tolerationthreshold" jdbcType="VARCHAR" />
+    <result column="frustrationthreshold" property="frustrationthreshold" jdbcType="VARCHAR" />
+    <result column="label" property="label" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, threads, apdex, tolerationthreshold, frustrationthreshold, `label`
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from apdex
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from apdex
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Apdex" >
+    insert into apdex (id, threads, apdex, 
+      tolerationthreshold, frustrationthreshold, 
+      `label`)
+    values (#{id,jdbcType=INTEGER}, #{threads,jdbcType=VARCHAR}, #{apdex,jdbcType=VARCHAR}, 
+      #{tolerationthreshold,jdbcType=VARCHAR}, #{frustrationthreshold,jdbcType=VARCHAR}, 
+      #{label,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Apdex" >
+    insert into apdex
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="threads != null" >
+        threads,
+      </if>
+      <if test="apdex != null" >
+        apdex,
+      </if>
+      <if test="tolerationthreshold != null" >
+        tolerationthreshold,
+      </if>
+      <if test="frustrationthreshold != null" >
+        frustrationthreshold,
+      </if>
+      <if test="label != null" >
+        `label`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="threads != null" >
+        #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="apdex != null" >
+        #{apdex,jdbcType=VARCHAR},
+      </if>
+      <if test="tolerationthreshold != null" >
+        #{tolerationthreshold,jdbcType=VARCHAR},
+      </if>
+      <if test="frustrationthreshold != null" >
+        #{frustrationthreshold,jdbcType=VARCHAR},
+      </if>
+      <if test="label != null" >
+        #{label,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Apdex" >
+    update apdex
+    <set >
+      <if test="threads != null" >
+        threads = #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="apdex != null" >
+        apdex = #{apdex,jdbcType=VARCHAR},
+      </if>
+      <if test="tolerationthreshold != null" >
+        tolerationthreshold = #{tolerationthreshold,jdbcType=VARCHAR},
+      </if>
+      <if test="frustrationthreshold != null" >
+        frustrationthreshold = #{frustrationthreshold,jdbcType=VARCHAR},
+      </if>
+      <if test="label != null" >
+        `label` = #{label,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Apdex" >
+    update apdex
+    set threads = #{threads,jdbcType=VARCHAR},
+      apdex = #{apdex,jdbcType=VARCHAR},
+      tolerationthreshold = #{tolerationthreshold,jdbcType=VARCHAR},
+      frustrationthreshold = #{frustrationthreshold,jdbcType=VARCHAR},
+      `label` = #{label,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

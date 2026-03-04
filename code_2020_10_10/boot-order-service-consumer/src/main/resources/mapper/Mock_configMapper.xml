@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Mock_configMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Mock_config" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="mock_name" property="mockName" jdbcType="VARCHAR" />
+    <result column="request_type" property="requestType" jdbcType="VARCHAR" />
+    <result column="mock_url" property="mockUrl" jdbcType="VARCHAR" />
+    <result column="prefix_option" property="prefixOption" jdbcType="VARCHAR" />
+    <result column="config_rules" property="configRules" jdbcType="VARCHAR" />
+    <result column="weight" property="weight" jdbcType="VARCHAR" />
+    <result column="result_type" property="resultType" jdbcType="VARCHAR" />
+    <result column="labe" property="labe" jdbcType="VARCHAR" />
+    <result column="other_mock_service" property="otherMockService" jdbcType="VARCHAR" />
+    <result column="mock_result" property="mockResult" jdbcType="VARCHAR" />
+    <result column="tag" property="tag" jdbcType="VARCHAR" />
+    <result column="timeout" property="timeout" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, mock_name,request_type, mock_url, prefix_option, config_rules, weight, result_type, labe,
+    other_mock_service, mock_result, tag, timeout, create_time, update_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from mock_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+
+  <select id="selectByUrl" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select
+    <include refid="Base_Column_List" />
+    from mock_config
+    where  mock_url = #{mock_url,jdbcType=VARCHAR} order by weight desc,update_time desc
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from mock_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Mock_config" >
+    insert into mock_config (mock_name,request_type, mock_url,
+      prefix_option, config_rules, weight, 
+      result_type, labe, other_mock_service, 
+      mock_result, tag, timeout,create_time,
+      update_time)
+    values (#{mockName,jdbcType=VARCHAR},#{requestType,jdbcType=VARCHAR}, #{mockUrl,jdbcType=VARCHAR},
+      #{prefixOption,jdbcType=VARCHAR}, #{configRules,jdbcType=VARCHAR}, #{weight,jdbcType=VARCHAR}, 
+      #{resultType,jdbcType=VARCHAR}, #{labe,jdbcType=VARCHAR}, #{otherMockService,jdbcType=VARCHAR}, 
+      #{mockResult,jdbcType=VARCHAR}, #{tag,jdbcType=VARCHAR},#{timeout,jdbcType=VARCHAR},
+      #{createTime,jdbcType=TIMESTAMP},
+      #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Mock_config" >
+    insert into mock_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mockName != null" >
+        mock_name,
+      </if>
+      <if test="requestType != null" >
+        request_type,
+      </if>
+      <if test="mockUrl != null" >
+        mock_url,
+      </if>
+      <if test="prefixOption != null" >
+        prefix_option,
+      </if>
+      <if test="configRules != null" >
+        config_rules,
+      </if>
+      <if test="weight != null" >
+        weight,
+      </if>
+      <if test="resultType != null" >
+        result_type,
+      </if>
+      <if test="labe != null" >
+        labe,
+      </if>
+      <if test="otherMockService != null" >
+        other_mock_service,
+      </if>
+      <if test="mockResult != null" >
+        mock_result,
+      </if>
+      <if test="tag != null" >
+        tag,
+      </if>
+      <if test="timeout != null" >
+        timeout,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+      <if test="updateTime != null" >
+        update_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="mockName != null" >
+        #{mockName,jdbcType=VARCHAR},
+      </if>
+      <if test="requestType != null" >
+        #{requestType,jdbcType=VARCHAR},
+      </if>
+      <if test="mockUrl != null" >
+        #{mockUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="prefixOption != null" >
+        #{prefixOption,jdbcType=VARCHAR},
+      </if>
+      <if test="configRules != null" >
+        #{configRules,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="resultType != null" >
+        #{resultType,jdbcType=VARCHAR},
+      </if>
+      <if test="labe != null" >
+        #{labe,jdbcType=VARCHAR},
+      </if>
+      <if test="otherMockService != null" >
+        #{otherMockService,jdbcType=VARCHAR},
+      </if>
+      <if test="mockResult != null" >
+        #{mockResult,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null" >
+        #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="timeout != null" >
+        #{timeout,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Mock_config" >
+    update mock_config
+    <set >
+      <if test="mockName != null" >
+        mock_name = #{mockName,jdbcType=VARCHAR},
+      </if>
+      <if test="request_type != null" >
+        request_type = #{requestType,jdbcType=VARCHAR},
+      </if>
+      <if test="mockUrl != null" >
+        mock_url = #{mockUrl,jdbcType=VARCHAR},
+      </if>
+      <if test="prefixOption != null" >
+        prefix_option = #{prefixOption,jdbcType=VARCHAR},
+      </if>
+      <if test="configRules != null" >
+        config_rules = #{configRules,jdbcType=VARCHAR},
+      </if>
+      <if test="weight != null" >
+        weight = #{weight,jdbcType=VARCHAR},
+      </if>
+      <if test="resultType != null" >
+        result_type = #{resultType,jdbcType=VARCHAR},
+      </if>
+      <if test="labe != null" >
+        labe = #{labe,jdbcType=VARCHAR},
+      </if>
+      <if test="otherMockService != null" >
+        other_mock_service = #{otherMockService,jdbcType=VARCHAR},
+      </if>
+      <if test="mockResult != null" >
+        mock_result = #{mockResult,jdbcType=VARCHAR},
+      </if>
+      <if test="tag != null" >
+        tag = #{tag,jdbcType=VARCHAR},
+      </if>
+      <if test="timeout != null" >
+        timeout = #{timeout,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Mock_config" >
+    update mock_config
+    set mock_name = #{mockName,jdbcType=VARCHAR},
+      request_type = #{requestType,jdbcType=VARCHAR},
+      mock_url = #{mockUrl,jdbcType=VARCHAR},
+      prefix_option = #{prefixOption,jdbcType=VARCHAR},
+      config_rules = #{configRules,jdbcType=VARCHAR},
+      weight = #{weight,jdbcType=VARCHAR},
+      result_type = #{resultType,jdbcType=VARCHAR},
+      labe = #{labe,jdbcType=VARCHAR},
+      other_mock_service = #{otherMockService,jdbcType=VARCHAR},
+      mock_result = #{mockResult,jdbcType=VARCHAR},
+      tag = #{tag,jdbcType=VARCHAR},
+      timeout = #{timeout,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      update_time = #{updateTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <!--
+  int updateStatusById(@Param("tag") String tag,@Param("id") Integer id);
+  -->
+  <update id="updateStatusById" parameterType="com.atguigu.gmall.entity.Mock_config" >
+    update mock_config
+    set
+    tag = #{tag,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="queryApiExecuteSumCount" resultType="map">
+    select * from mock_config
+    <if test="criterions != null">
+      <include refid="where_clause" />
+    </if>
+  </select>
+
+
+  <!-- order by id DESC -->
+  <select id="queryApiExecuteLog4Manage" resultType="map">
+    SELECT
+    *
+    FROM
+    (
+    select * from mock_config order by id DESC
+    )t
+    <if test="criterions != null">
+      <include refid="where_clause" />
+      order by id DESC
+    </if>
+  </select>
+
+
+
+  <sql id="where_clause">
+    <where>
+      <foreach collection="criterions" index="index" item="criterion"
+               open="" separator="" close="">
+        <choose>
+          <when test="criterion.noValue">
+            and ${criterion.condition}
+          </when>
+          <when test="criterion.singleValue">
+            and ${criterion.condition} #{criterion.value}
+          </when>
+          <when test="criterion.betweenValue">
+            and ${criterion.condition} #{criterion.value} and
+            #{criterion.secondValue}
+          </when>
+          <when test="criterion.listValue">
+            and ${criterion.condition}
+            <foreach collection="criterion.value" item="listItem"
+                     open="(" close=")" separator=",">
+              #{listItem}
+            </foreach>
+          </when>
+        </choose>
+      </foreach>
+    </where>
+  </sql>
+
+
+
+</mapper>

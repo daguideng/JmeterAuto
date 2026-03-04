@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Interface_configMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Interface_config" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="threads" property="threads" jdbcType="VARCHAR" />
+    <result column="runtime" property="runtime" jdbcType="VARCHAR" />
+    <result column="delaytime" property="delaytime" jdbcType="VARCHAR" />
+    <result column="ifretry" property="ifretry" jdbcType="VARCHAR" />
+    <result column="ifoutinterval" property="ifoutinterval" jdbcType="VARCHAR" />
+    <result column="ifcustomlistener" property="ifcustomlistener" jdbcType="VARCHAR" />
+    <result column="ifrecordlogjtl" property="ifrecordlogjtl" jdbcType="VARCHAR" />
+    <result column="ifrecordlogjmeter" property="ifrecordlogjmeter" jdbcType="VARCHAR" />
+    <result column="ifbetweenvalue" property="ifbetweenvalue" jdbcType="VARCHAR" />
+    <result column="threadname" property="threadname" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, threads, runtime, delaytime, ifretry, ifoutinterval, ifcustomlistener, ifrecordlogjtl, 
+    ifrecordlogjmeter, ifbetweenvalue, threadname, `status`
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from interface_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from interface_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Interface_config" >
+    insert into interface_config ( threads, runtime,
+      delaytime, ifretry, ifoutinterval, 
+      ifcustomlistener, ifrecordlogjtl, ifrecordlogjmeter, 
+      ifbetweenvalue, threadname, `status`
+      )
+    values ( #{threads,jdbcType=VARCHAR}, #{runtime,jdbcType=VARCHAR},
+      #{delaytime,jdbcType=VARCHAR}, #{ifretry,jdbcType=VARCHAR}, #{ifoutinterval,jdbcType=VARCHAR}, 
+      #{ifcustomlistener,jdbcType=VARCHAR}, #{ifrecordlogjtl,jdbcType=VARCHAR}, #{ifrecordlogjmeter,jdbcType=VARCHAR}, 
+      #{ifbetweenvalue,jdbcType=VARCHAR}, #{threadname,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}
+      )
+  </insert>
+
+
+
+
+  <!--  Map<String,Object> getByPrimaryKey(Integer id) -->
+  <select id="getByPrimaryKey"     resultType="map" >
+    select *  from interface_config where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <!--  更新运行状态  -->
+  <update id="updateInterRunState"   >
+    update  perf_config set status = #{status,jdbcType=VARCHAR} where threadname = #{threadname,jdbcType=VARCHAR}
+  </update>
+
+  <!--  Map<String,Object> getByPrimaryKey(String value) -->
+  <select id="getByVauleKey"     resultType="map" >
+    select *  from interface_config where threadname = #{threadname,jdbcType=VARCHAR}
+  </select>
+
+
+
+
+  <select id="selectByLastThreadname" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from interface_config  order by id desc limit 1
+
+  </select>
+
+
+
+
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Interface_config" >
+    insert into interface_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="threads != null" >
+        threads,
+      </if>
+      <if test="runtime != null" >
+        runtime,
+      </if>
+      <if test="delaytime != null" >
+        delaytime,
+      </if>
+      <if test="ifretry != null" >
+        ifretry,
+      </if>
+      <if test="ifoutinterval != null" >
+        ifoutinterval,
+      </if>
+      <if test="ifcustomlistener != null" >
+        ifcustomlistener,
+      </if>
+      <if test="ifrecordlogjtl != null" >
+        ifrecordlogjtl,
+      </if>
+      <if test="ifrecordlogjmeter != null" >
+        ifrecordlogjmeter,
+      </if>
+      <if test="ifbetweenvalue != null" >
+        ifbetweenvalue,
+      </if>
+      <if test="threadname != null" >
+        threadname,
+      </if>
+      <if test="status != null" >
+        `status`,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="threads != null" >
+        #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="runtime != null" >
+        #{runtime,jdbcType=VARCHAR},
+      </if>
+      <if test="delaytime != null" >
+        #{delaytime,jdbcType=VARCHAR},
+      </if>
+      <if test="ifretry != null" >
+        #{ifretry,jdbcType=VARCHAR},
+      </if>
+      <if test="ifoutinterval != null" >
+        #{ifoutinterval,jdbcType=VARCHAR},
+      </if>
+      <if test="ifcustomlistener != null" >
+        #{ifcustomlistener,jdbcType=VARCHAR},
+      </if>
+      <if test="ifrecordlogjtl != null" >
+        #{ifrecordlogjtl,jdbcType=VARCHAR},
+      </if>
+      <if test="ifrecordlogjmeter != null" >
+        #{ifrecordlogjmeter,jdbcType=VARCHAR},
+      </if>
+      <if test="ifbetweenvalue != null" >
+        #{ifbetweenvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="threadname != null" >
+        #{threadname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Interface_config" >
+    update interface_config
+    <set >
+      <if test="threads != null" >
+        threads = #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="runtime != null" >
+        runtime = #{runtime,jdbcType=VARCHAR},
+      </if>
+      <if test="delaytime != null" >
+        delaytime = #{delaytime,jdbcType=VARCHAR},
+      </if>
+      <if test="ifretry != null" >
+        ifretry = #{ifretry,jdbcType=VARCHAR},
+      </if>
+      <if test="ifoutinterval != null" >
+        ifoutinterval = #{ifoutinterval,jdbcType=VARCHAR},
+      </if>
+      <if test="ifcustomlistener != null" >
+        ifcustomlistener = #{ifcustomlistener,jdbcType=VARCHAR},
+      </if>
+      <if test="ifrecordlogjtl != null" >
+        ifrecordlogjtl = #{ifrecordlogjtl,jdbcType=VARCHAR},
+      </if>
+      <if test="ifrecordlogjmeter != null" >
+        ifrecordlogjmeter = #{ifrecordlogjmeter,jdbcType=VARCHAR},
+      </if>
+      <if test="ifbetweenvalue != null" >
+        ifbetweenvalue = #{ifbetweenvalue,jdbcType=VARCHAR},
+      </if>
+      <if test="threadname != null" >
+        threadname = #{threadname,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        `status` = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Interface_config" >
+    update interface_config
+    set threads = #{threads,jdbcType=VARCHAR},
+      runtime = #{runtime,jdbcType=VARCHAR},
+      delaytime = #{delaytime,jdbcType=VARCHAR},
+      ifretry = #{ifretry,jdbcType=VARCHAR},
+      ifoutinterval = #{ifoutinterval,jdbcType=VARCHAR},
+      ifcustomlistener = #{ifcustomlistener,jdbcType=VARCHAR},
+      ifrecordlogjtl = #{ifrecordlogjtl,jdbcType=VARCHAR},
+      ifrecordlogjmeter = #{ifrecordlogjmeter,jdbcType=VARCHAR},
+      ifbetweenvalue = #{ifbetweenvalue,jdbcType=VARCHAR},
+      threadname = #{threadname,jdbcType=VARCHAR},
+      `status` = #{status,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../boot-order-service-consumer/boot-order-service-consumer.iml" filepath="$PROJECT_DIR$/../boot-order-service-consumer/boot-order-service-consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gmall-interface.iml" filepath="$PROJECT_DIR$/gmall-interface.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../boot-user-service-provider/provider-service-jmeter-agent.iml" filepath="$PROJECT_DIR$/../boot-user-service-provider/provider-service-jmeter-agent.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.atguigu.gmall</groupId>
+  <artifactId>gmall-interface</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+
+
+  <build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.11.0</version> <!-- 使用新版插件 -->
+      <configuration>
+        <source>1.8</source>      <!-- 对应 Java 8 -->
+        <target>1.8</target>      <!-- 对应 Java 8 -->
+        <encoding>UTF-8</encoding>     <!-- JDK 9+ 需要此参数 -->
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+
+</project>

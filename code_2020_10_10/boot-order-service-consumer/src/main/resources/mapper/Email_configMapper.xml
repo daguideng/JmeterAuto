@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Email_configMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Email_config" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="mail_transport_protocol" property="mailTransportProtocol" jdbcType="VARCHAR" />
+    <result column="mail_smtp_host" property="mailSmtpHost" jdbcType="VARCHAR" />
+    <result column="mail_smtp_port" property="mailSmtpPort" jdbcType="VARCHAR" />
+    <result column="mail_smtp_auth" property="mailSmtpAuth" jdbcType="VARCHAR" />
+    <result column="mail_debug" property="mailDebug" jdbcType="VARCHAR" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="mail_from" property="mailFrom" jdbcType="VARCHAR" />
+    <result column="mail_to" property="mailTo" jdbcType="VARCHAR" />
+    <result column="mail_cc" property="mailCc" jdbcType="VARCHAR" />
+    <result column="mail_bcc" property="mailBcc" jdbcType="VARCHAR" />
+    <result column="send_report" property="sendReport" jdbcType="BIT" />
+    <result column="create_date" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, mail_transport_protocol, mail_smtp_host, mail_smtp_port, mail_smtp_auth, mail_debug, 
+    username, `password`, mail_from, mail_to, mail_cc, mail_bcc, send_report, create_date
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from email_config
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from email_config
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Email_config" >
+    insert into email_config (id, mail_transport_protocol, mail_smtp_host, 
+      mail_smtp_port, mail_smtp_auth, mail_debug, 
+      username, `password`, mail_from, 
+      mail_to, mail_cc, mail_bcc, send_report,
+      create_date)
+    values (#{id,jdbcType=INTEGER}, #{mailTransportProtocol,jdbcType=VARCHAR}, #{mailSmtpHost,jdbcType=VARCHAR}, 
+      #{mailSmtpPort,jdbcType=VARCHAR}, #{mailSmtpAuth,jdbcType=VARCHAR}, #{mailDebug,jdbcType=VARCHAR}, 
+      #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{mailFrom,jdbcType=VARCHAR}, 
+      #{mailTo,jdbcType=VARCHAR}, #{mailCc,jdbcType=VARCHAR}, #{mailBcc,jdbcType=VARCHAR}, #{sendReport,jdbcType=BIT},
+      #{createDate,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Email_config" >
+    insert into email_config
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="mailTransportProtocol != null" >
+        mail_transport_protocol,
+      </if>
+      <if test="mailSmtpHost != null" >
+        mail_smtp_host,
+      </if>
+      <if test="mailSmtpPort != null" >
+        mail_smtp_port,
+      </if>
+      <if test="mailSmtpAuth != null" >
+        mail_smtp_auth,
+      </if>
+      <if test="mailDebug != null" >
+        mail_debug,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="password != null" >
+        `password`,
+      </if>
+      <if test="mailFrom != null" >
+        mail_from,
+      </if>
+      <if test="mailTo != null" >
+        mail_to,
+      </if>
+      <if test="mailCc != null" >
+        mail_cc,
+      </if>
+      <if test="mailBcc != null" >
+        mail_bcc,
+      </if>
+      <if test="createDate != null" >
+        create_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="mailTransportProtocol != null" >
+        #{mailTransportProtocol,jdbcType=VARCHAR},
+      </if>
+      <if test="mailSmtpHost != null" >
+        #{mailSmtpHost,jdbcType=VARCHAR},
+      </if>
+      <if test="mailSmtpPort != null" >
+        #{mailSmtpPort,jdbcType=VARCHAR},
+      </if>
+      <if test="mailSmtpAuth != null" >
+        #{mailSmtpAuth,jdbcType=VARCHAR},
+      </if>
+      <if test="mailDebug != null" >
+        #{mailDebug,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="mailFrom != null" >
+        #{mailFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="mailTo != null" >
+        #{mailTo,jdbcType=VARCHAR},
+      </if>
+      <if test="mailCc != null" >
+        #{mailCc,jdbcType=VARCHAR},
+      </if>
+      <if test="mailBcc != null" >
+        #{mailBcc,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Email_config" >
+    update email_config
+    <set >
+      <if test="mailTransportProtocol != null" >
+        mail_transport_protocol = #{mailTransportProtocol,jdbcType=VARCHAR},
+      </if>
+      <if test="mailSmtpHost != null" >
+        mail_smtp_host = #{mailSmtpHost,jdbcType=VARCHAR},
+      </if>
+      <if test="mailSmtpPort != null" >
+        mail_smtp_port = #{mailSmtpPort,jdbcType=VARCHAR},
+      </if>
+      <if test="mailSmtpAuth != null" >
+        mail_smtp_auth = #{mailSmtpAuth,jdbcType=VARCHAR},
+      </if>
+      <if test="mailDebug != null" >
+        mail_debug = #{mailDebug,jdbcType=VARCHAR},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="password != null" >
+        `password` = #{password,jdbcType=VARCHAR},
+      </if>
+      <if test="mailFrom != null" >
+        mail_from = #{mailFrom,jdbcType=VARCHAR},
+      </if>
+      <if test="mailTo != null" >
+        mail_to = #{mailTo,jdbcType=VARCHAR},
+      </if>
+      <if test="mailCc != null" >
+        mail_cc = #{mailCc,jdbcType=VARCHAR},
+      </if>
+      <if test="mailBcc != null" >
+        mail_bcc = #{mailBcc,jdbcType=VARCHAR},
+      </if>
+      <if test="createDate != null" >
+        create_date = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Email_config" >
+    update email_config
+    set mail_transport_protocol = #{mailTransportProtocol,jdbcType=VARCHAR},
+      mail_smtp_host = #{mailSmtpHost,jdbcType=VARCHAR},
+      mail_smtp_port = #{mailSmtpPort,jdbcType=VARCHAR},
+      mail_smtp_auth = #{mailSmtpAuth,jdbcType=VARCHAR},
+      mail_debug = #{mailDebug,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      `password` = #{password,jdbcType=VARCHAR},
+      mail_from = #{mailFrom,jdbcType=VARCHAR},
+      mail_to = #{mailTo,jdbcType=VARCHAR},
+      mail_cc = #{mailCc,jdbcType=VARCHAR},
+      mail_bcc = #{mailBcc,jdbcType=VARCHAR},
+      create_date = #{createDate,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <!--  Map<String,Object> getByPrimaryKey(Integer id) -->
+  <select id="getByPrimaryKey"     resultType="map" >
+    select *  from email_config where id = #{id,jdbcType=INTEGER}
+  </select>
+
+
+</mapper>

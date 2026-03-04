@@ -1,0 +1,108 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 1.75kB done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/eclipse-temurin:17-jre
+#2 DONE 0.4s
+
+#3 [builder 1/2] FROM docker.io/library/eclipse-temurin:17-jre@sha256:e63288cbcc5de259866761281980afe4ac8de8e208d389bc858b049d6d240ebd
+#3 CACHED
+
+#4 [stage-1  2/10] WORKDIR /app
+#4 CACHED
+
+#5 [internal] load .dockerignore
+#5 transferring context: 2B done
+#5 DONE 0.0s
+
+#6 [internal] load build context
+#6 transferring context: 425.56MB 1.2s done
+#6 DONE 1.3s
+
+#7 [builder 2/2] RUN sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list &&     sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list &&     echo 'Acquire::http::Dl-Limit "100";' > /etc/apt/apt.conf.d/99downloads &&     echo 'Acquire::Queue-Mode "access";' >> /etc/apt/apt.conf.d/99downloads &&     apt-get update --fix-missing &&     apt-get install -y ntpdate &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*
+#7 1.005 Get:1 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+#7 3.694 Get:2 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+#7 5.090 Get:3 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+#7 6.635 Get:4 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+#7 8.520 Get:5 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1,808 kB]
+#7 25.35 Get:6 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+#7 28.51 Get:7 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+#7 206.0 Get:8 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+#7 207.1 Get:9 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1,793 kB]
+#7 223.6 Get:10 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1,922 kB]
+#7 241.2 Get:11 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [2,414 kB]
+#7 263.7 Get:12 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.9 kB]
+#7 264.3 Get:13 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [35.6 kB]
+#7 264.8 Get:14 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [48.8 kB]
+#7 265.7 Get:15 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,439 kB]
+#7 306.7 Ign:15 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages
+#7 307.3 Get:16 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [2,306 kB]
+#7 328.7 Get:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,136 kB]
+#7 335.4 Ign:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages
+#7 336.0 Get:18 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.6 kB]
+#7 336.5 Get:15 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1,439 kB]
+#7 341.9 Get:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1,136 kB]
+#7 347.8 Err:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages
+#7 347.8   Hash Sum mismatch
+#7 347.8   Hashes of expected file:
+#7 347.8    - Filesize:1136081 [weak]
+#7 347.8    - SHA256:fb12fda71ed2e3ef68a915fd3fae5c55216f031950e50041d9f9ba33cc573358
+#7 347.8    - SHA1:e2f5b7fceff50aa7eb20c0c2d50e105ff1af0fda [weak]
+#7 347.8    - MD5Sum:bd13523d7cedf2128e627e25668773ed [weak]
+#7 347.8   Hashes of received file:
+#7 347.8    - SHA256:c6797df5f05b76280f006740e09077129025bdc1ba72ac6bbf42e33c600d7f31
+#7 347.8    - SHA1:db06b7d9d7c5c44d4ee3e28ecdebb14c784dfae1 [weak]
+#7 347.8    - MD5Sum:a9934e5668c9e0ce9e6b47d7523373d1 [weak]
+#7 347.8    - Filesize:1136081 [weak]
+#7 347.8   Last modification reported: Fri, 19 Sep 2025 01:15:45 +0000
+#7 347.8   Release file created at: Sat, 20 Sep 2025 11:50:40 +0000
+#7 347.8 Fetched 31.6 MB in 5min 48s (91.0 kB/s)
+#7 347.8 Reading package lists...
+#7 348.2 E: Failed to fetch http://security.ubuntu.com/ubuntu/dists/noble-security/universe/binary-amd64/by-hash/SHA256/fb12fda71ed2e3ef68a915fd3fae5c55216f031950e50041d9f9ba33cc573358  Hash Sum mismatch
+#7 348.2    Hashes of expected file:
+#7 348.2     - Filesize:1136081 [weak]
+#7 348.2     - SHA256:fb12fda71ed2e3ef68a915fd3fae5c55216f031950e50041d9f9ba33cc573358
+#7 348.2     - SHA1:e2f5b7fceff50aa7eb20c0c2d50e105ff1af0fda [weak]
+#7 348.2     - MD5Sum:bd13523d7cedf2128e627e25668773ed [weak]
+#7 348.2    Hashes of received file:
+#7 348.2     - SHA256:c6797df5f05b76280f006740e09077129025bdc1ba72ac6bbf42e33c600d7f31
+#7 348.2     - SHA1:db06b7d9d7c5c44d4ee3e28ecdebb14c784dfae1 [weak]
+#7 348.2     - MD5Sum:a9934e5668c9e0ce9e6b47d7523373d1 [weak]
+#7 348.2     - Filesize:1136081 [weak]
+#7 348.2    Last modification reported: Fri, 19 Sep 2025 01:15:45 +0000
+#7 348.2    Release file created at: Sat, 20 Sep 2025 11:50:40 +0000
+#7 348.2 E: Some index files failed to download. They have been ignored, or old ones used instead.
+#7 ERROR: process "/bin/sh -c sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list &&     sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list &&     echo 'Acquire::http::Dl-Limit \"100\";' > /etc/apt/apt.conf.d/99downloads &&     echo 'Acquire::Queue-Mode \"access\";' >> /etc/apt/apt.conf.d/99downloads &&     apt-get update --fix-missing &&     apt-get install -y ntpdate &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100
+------
+ > [builder 2/2] RUN sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list &&     sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list &&     echo 'Acquire::http::Dl-Limit "100";' > /etc/apt/apt.conf.d/99downloads &&     echo 'Acquire::Queue-Mode "access";' >> /etc/apt/apt.conf.d/99downloads &&     apt-get update --fix-missing &&     apt-get install -y ntpdate &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*:
+348.2     - SHA1:e2f5b7fceff50aa7eb20c0c2d50e105ff1af0fda [weak]
+348.2     - MD5Sum:bd13523d7cedf2128e627e25668773ed [weak]
+348.2    Hashes of received file:
+348.2     - SHA256:c6797df5f05b76280f006740e09077129025bdc1ba72ac6bbf42e33c600d7f31
+348.2     - SHA1:db06b7d9d7c5c44d4ee3e28ecdebb14c784dfae1 [weak]
+348.2     - MD5Sum:a9934e5668c9e0ce9e6b47d7523373d1 [weak]
+348.2     - Filesize:1136081 [weak]
+348.2    Last modification reported: Fri, 19 Sep 2025 01:15:45 +0000
+348.2    Release file created at: Sat, 20 Sep 2025 11:50:40 +0000
+348.2 E: Some index files failed to download. They have been ignored, or old ones used instead.
+------
+
+ [33m2 warnings found (use docker --debug to expand):
+[0m - UndefinedVar: Usage of undefined variable '$JAVA8_HOME' (did you mean $JAVA_HOME?) (line 29)
+ - UndefinedVar: Usage of undefined variable '$JMETER_HOME' (line 29)
+Dockerfile:4
+--------------------
+   3 |     # 安装依赖阶段
+   4 | >>> RUN sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && \
+   5 | >>>     sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list && \
+   6 | >>>     echo 'Acquire::http::Dl-Limit "100";' > /etc/apt/apt.conf.d/99downloads && \
+   7 | >>>     echo 'Acquire::Queue-Mode "access";' >> /etc/apt/apt.conf.d/99downloads && \
+   8 | >>>     apt-get update --fix-missing && \
+   9 | >>>     apt-get install -y ntpdate && \
+  10 | >>>     apt-get clean && \
+  11 | >>>     rm -rf /var/lib/apt/lists/*
+  12 |     
+--------------------
+ERROR: failed to build: failed to solve: process "/bin/sh -c sed -i 's/security.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list &&     sed -i 's/archive.ubuntu.com/mirrors.aliyun.com/g' /etc/apt/sources.list &&     echo 'Acquire::http::Dl-Limit \"100\";' > /etc/apt/apt.conf.d/99downloads &&     echo 'Acquire::Queue-Mode \"access\";' >> /etc/apt/apt.conf.d/99downloads &&     apt-get update --fix-missing &&     apt-get install -y ntpdate &&     apt-get clean &&     rm -rf /var/lib/apt/lists/*" did not complete successfully: exit code: 100

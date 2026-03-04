@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Jmeter_runip_statesMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Jmeter_runip_states" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ipaddress" property="ipaddress" jdbcType="VARCHAR" />
+    <result column="states" property="states" jdbcType="VARCHAR" />
+    <result column="type" property="type" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="runusername" property="runusername" jdbcType="VARCHAR" />
+    <result column="runstate" property="runstate" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ipaddress, states, `type`, `time`, runusername, runstate
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jmeter_runip_states
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jmeter_runip_states
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Jmeter_runip_states" >
+    insert into jmeter_runip_states (id, ipaddress, states, 
+      `type`, `time`, runusername, 
+      runstate)
+    values (#{id,jdbcType=INTEGER}, #{ipaddress,jdbcType=VARCHAR}, #{states,jdbcType=VARCHAR}, 
+      #{type,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, #{runusername,jdbcType=VARCHAR}, 
+      #{runstate,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Jmeter_runip_states" >
+    insert into jmeter_runip_states
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ipaddress != null" >
+        ipaddress,
+      </if>
+      <if test="states != null" >
+        states,
+      </if>
+      <if test="type != null" >
+        `type`,
+      </if>
+      <if test="time != null" >
+        `time`,
+      </if>
+      <if test="runusername != null" >
+        runusername,
+      </if>
+      <if test="runstate != null" >
+        runstate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ipaddress != null" >
+        #{ipaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="states != null" >
+        #{states,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="runusername != null" >
+        #{runusername,jdbcType=VARCHAR},
+      </if>
+      <if test="runstate != null" >
+        #{runstate,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Jmeter_runip_states" >
+    update jmeter_runip_states
+    <set >
+      <if test="ipaddress != null" >
+        ipaddress = #{ipaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="states != null" >
+        states = #{states,jdbcType=VARCHAR},
+      </if>
+      <if test="type != null" >
+        `type` = #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        `time` = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="runusername != null" >
+        runusername = #{runusername,jdbcType=VARCHAR},
+      </if>
+      <if test="runstate != null" >
+        runstate = #{runstate,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Jmeter_runip_states" >
+    update jmeter_runip_states
+    set ipaddress = #{ipaddress,jdbcType=VARCHAR},
+      states = #{states,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      `time` = #{time,jdbcType=VARCHAR},
+      runusername = #{runusername,jdbcType=VARCHAR},
+      runstate = #{runstate,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="selectByStatusRunIp"  resultType="com.atguigu.gmall.entity.Jmeter_runip_states">
+    select DISTINCT
+    ipaddress, states, type,`time`,runusername,runstate
+    from jmeter_runip_states
+    where   states in
+    <foreach item="item" index="index" collection="list" open="(" separator="," close=")">
+      #{item}
+    </foreach>
+
+  </select>
+
+
+  <update id="updatetype"  parameterType="com.atguigu.gmall.entity.Jmeter_runip_states" >
+    update jmeter_runip_states
+    set type = #{type,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <update id="pause"  parameterType="com.atguigu.gmall.entity.Jmeter_runip_states" >
+    update jmeter_runip_states
+    set runstate = 1
+    where id = #{id,jdbcType=INTEGER}
+
+  </update>
+
+
+  <update id="enable"  parameterType="com.atguigu.gmall.entity.Jmeter_runip_states" >
+    update jmeter_runip_states
+    set runstate = 0
+    where id = #{id,jdbcType=INTEGER}
+
+  </update>
+
+
+
+
+</mapper>

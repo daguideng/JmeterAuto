@@ -1,0 +1,4 @@
+{
+    "editor.fontSize": 14,  // 增大编辑器字体
+    "terminal.integrated.fontSize": 14  // 增大终端字体
+}

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Jmeter_perf_top5_errorsMapper" >
+  <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Jmeter_perf_top5_errors" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="scriptname" property="scriptname" jdbcType="VARCHAR" />
+    <result column="threads" property="threads" jdbcType="VARCHAR" />
+    <result column="runtime" property="runtime" jdbcType="VARCHAR" />
+    <result column="sample" property="sample" jdbcType="VARCHAR" />
+    <result column="samples" property="samples" jdbcType="VARCHAR" />
+    <result column="errors" property="errors" jdbcType="VARCHAR" />
+    <result column="error_1" property="error1" jdbcType="VARCHAR" />
+    <result column="errors_1" property="errors1" jdbcType="VARCHAR" />
+    <result column="error_2" property="error2" jdbcType="VARCHAR" />
+    <result column="errors_2" property="errors2" jdbcType="VARCHAR" />
+    <result column="error_3" property="error3" jdbcType="VARCHAR" />
+    <result column="errors_3" property="errors3" jdbcType="VARCHAR" />
+    <result column="error_4" property="error4" jdbcType="VARCHAR" />
+    <result column="errors_4" property="errors4" jdbcType="VARCHAR" />
+    <result column="error_5" property="error5" jdbcType="VARCHAR" />
+    <result column="errors_5" property="errors5" jdbcType="VARCHAR" />
+    <result column="url" property="url" jdbcType="VARCHAR" />
+    <result column="jplpath" property="jplpath" jdbcType="VARCHAR" />
+    <result column="indexpath" property="indexpath" jdbcType="VARCHAR" />
+    <result column="states" property="states" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, scriptname, threads, runtime, sample, samples,errors, error_1, errors_1, error_2,
+    errors_2, error_3, errors_3, error_4, errors_4, error_5,errors_5 ,url, jplpath, indexpath,
+    states
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from jmeter_perf_top5_errors
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from jmeter_perf_top5_errors
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+
+
+
+  <select id="selectErrorReport" resultType="com.atguigu.gmall.entity.Jmeter_perf_top5_errors">
+    select
+    id, runtime,scriptname,threads,url,sample, samples,errors, error_1, errors_1, error_2,
+    errors_2, error_3, errors_3, error_4, errors_4, error_5,errors_5
+    from jmeter_perf_top5_errors
+    where   runtime = #{lastruntime,jdbcType=VARCHAR} and scriptname = #{scriptname,jdbcType=VARCHAR}
+    and sample = #{transactionName,jdbcType=VARCHAR}
+  </select>
+
+
+
+  <select id="selectAllErrorReport" resultType="com.atguigu.gmall.entity.Jmeter_perf_top5_errors">
+    select
+    id, runtime,scriptname,threads,url,sample, samples,errors, error_1, errors_1, error_2,
+    errors_2, error_3, errors_3, error_4, errors_4, error_5,errors_5
+    from jmeter_perf_top5_errors
+    where   runtime = #{lastruntime,jdbcType=VARCHAR} and scriptname = #{scriptname,jdbcType=VARCHAR}
+  </select>
+
+
+
+
+  <select id="selectJplPath"  resultType="com.atguigu.gmall.entity.Jmeter_perf_top5_errors" >
+    select
+    *
+    from jmeter_perf_top5_errors
+    where runtime = #{lastruntime,jdbcType=VARCHAR} and scriptname = #{scriptname,jdbcType=VARCHAR}
+
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+  <insert id="insert" parameterType="com.atguigu.gmall.entity.Jmeter_perf_top5_errors" >
+    insert into jmeter_perf_top5_errors (scriptname, threads,
+      runtime, sample, samples,
+      errors, error_1, errors_1,
+      error_2, errors_2, error_3,
+      errors_3, error_4, errors_4,
+      error_5,errors_5 ,url, jplpath,
+      indexpath, states)
+    values (#{scriptname,jdbcType=VARCHAR}, #{threads,jdbcType=VARCHAR},
+      #{runtime,jdbcType=VARCHAR}, #{sample,jdbcType=VARCHAR}, #{samples,jdbcType=VARCHAR},
+      #{errors,jdbcType=VARCHAR}, #{error1,jdbcType=VARCHAR}, #{errors1,jdbcType=VARCHAR},
+      #{error2,jdbcType=VARCHAR}, #{errors2,jdbcType=VARCHAR}, #{error3,jdbcType=VARCHAR},
+      #{errors3,jdbcType=VARCHAR}, #{error4,jdbcType=VARCHAR}, #{errors4,jdbcType=VARCHAR},
+      #{error5,jdbcType=VARCHAR},#{errors5,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, #{jplpath,jdbcType=VARCHAR},
+      #{indexpath,jdbcType=VARCHAR}, #{states,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Jmeter_perf_top5_errors" >
+    insert into jmeter_perf_top5_errors
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="scriptname != null" >
+        scriptname,
+      </if>
+      <if test="threads != null" >
+        threads,
+      </if>
+      <if test="runtime != null" >
+        runtime,
+      </if>
+      <if test="sample != null" >
+        sample,
+      </if>
+      <if test="samples != null" >
+        samples,
+      </if>
+      <if test="errors1 != null" >
+        errors,
+      </if>
+      <if test="error1 != null" >
+        error_1,
+      </if>
+      <if test="errors1 != null" >
+        errors_1,
+      </if>
+      <if test="error2 != null" >
+        error_2,
+      </if>
+      <if test="errors2 != null" >
+        errors_2,
+      </if>
+      <if test="error3 != null" >
+        error_3,
+      </if>
+      <if test="errors3 != null" >
+        errors_3,
+      </if>
+      <if test="error4 != null" >
+        error_4,
+      </if>
+      <if test="errors4 != null" >
+        errors_4,
+      </if>
+      <if test="error5 != null" >
+        error_5,
+      </if>
+      <if test="errors5 != null" >
+        errors_5,
+      </if>
+      <if test="url != null" >
+        url,
+      </if>
+      <if test="jplpath != null" >
+        jplpath,
+      </if>
+      <if test="indexpath != null" >
+        indexpath,
+      </if>
+      <if test="states != null" >
+        states,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="scriptname != null" >
+        #{scriptname,jdbcType=VARCHAR},
+      </if>
+      <if test="threads != null" >
+        #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="runtime != null" >
+        #{runtime,jdbcType=VARCHAR},
+      </if>
+      <if test="sample != null" >
+        #{sample,jdbcType=VARCHAR},
+      </if>
+      <if test="samples != null" >
+        #{samples,jdbcType=VARCHAR},
+      </if>
+      <if test="errors != null" >
+        #{errors,jdbcType=VARCHAR},
+      </if>
+      <if test="error1 != null" >
+        #{error1,jdbcType=VARCHAR},
+      </if>
+      <if test="errors1 != null" >
+        #{errors1,jdbcType=VARCHAR},
+      </if>
+      <if test="error2 != null" >
+        #{error2,jdbcType=VARCHAR},
+      </if>
+      <if test="errors2 != null" >
+        #{errors2,jdbcType=VARCHAR},
+      </if>
+      <if test="error3 != null" >
+        #{error3,jdbcType=VARCHAR},
+      </if>
+      <if test="errors3 != null" >
+        #{errors3,jdbcType=VARCHAR},
+      </if>
+      <if test="error4 != null" >
+        #{error4,jdbcType=VARCHAR},
+      </if>
+      <if test="errors4 != null" >
+        #{errors4,jdbcType=VARCHAR},
+      </if>
+      <if test="error5 != null" >
+        #{error5,jdbcType=VARCHAR},
+      </if>
+      <if test="errors5 != null" >
+        #{errors5,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="jplpath != null" >
+        #{jplpath,jdbcType=VARCHAR},
+      </if>
+      <if test="indexpath != null" >
+        #{indexpath,jdbcType=VARCHAR},
+      </if>
+      <if test="states != null" >
+        #{states,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Jmeter_perf_top5_errors" >
+    update jmeter_perf_top5_errors
+    <set >
+      <if test="scriptname != null" >
+        scriptname = #{scriptname,jdbcType=VARCHAR},
+      </if>
+      <if test="threads != null" >
+        threads = #{threads,jdbcType=VARCHAR},
+      </if>
+      <if test="runtime != null" >
+        runtime = #{runtime,jdbcType=VARCHAR},
+      </if>
+      <if test="sample != null" >
+        sample = #{sample,jdbcType=VARCHAR},
+      </if>
+      <if test="samples != null" >
+        samples = #{samples,jdbcType=VARCHAR},
+      </if>
+      <if test="errors1 != null" >
+        errors = #{errors,jdbcType=VARCHAR},
+      </if>
+      <if test="error1 != null" >
+        error_1 = #{error1,jdbcType=VARCHAR},
+      </if>
+      <if test="errors != null" >
+        errors_1 = #{errors1,jdbcType=VARCHAR},
+      </if>
+      <if test="error2 != null" >
+        error_2 = #{error2,jdbcType=VARCHAR},
+      </if>
+      <if test="errors2 != null" >
+        errors_2 = #{errors2,jdbcType=VARCHAR},
+      </if>
+      <if test="error3 != null" >
+        error_3 = #{error3,jdbcType=VARCHAR},
+      </if>
+      <if test="errors3 != null" >
+        errors_3 = #{errors3,jdbcType=VARCHAR},
+      </if>
+      <if test="error4 != null" >
+        error_4 = #{error4,jdbcType=VARCHAR},
+      </if>
+      <if test="errors4 != null" >
+        errors_4 = #{errors4,jdbcType=VARCHAR},
+      </if>
+      <if test="error5 != null" >
+        error_5 = #{error5,jdbcType=VARCHAR},
+      </if>
+      <if test="errors5 != null" >
+        errors_5 = #{errors5,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null" >
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="jplpath != null" >
+        jplpath = #{jplpath,jdbcType=VARCHAR},
+      </if>
+      <if test="indexpath != null" >
+        indexpath = #{indexpath,jdbcType=VARCHAR},
+      </if>
+      <if test="states != null" >
+        states = #{states,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Jmeter_perf_top5_errors" >
+    update jmeter_perf_top5_errors
+    set scriptname = #{scriptname,jdbcType=VARCHAR},
+      threads = #{threads,jdbcType=VARCHAR},
+      runtime = #{runtime,jdbcType=VARCHAR},
+      sample = #{sample,jdbcType=VARCHAR},
+      samples = #{samples,jdbcType=VARCHAR},
+      errors = #{errors,jdbcType=VARCHAR},
+      error_1 = #{error1,jdbcType=VARCHAR},
+      errors_1 = #{errors1,jdbcType=VARCHAR},
+      error_2 = #{error2,jdbcType=VARCHAR},
+      errors_2 = #{errors2,jdbcType=VARCHAR},
+      error_3 = #{error3,jdbcType=VARCHAR},
+      errors_3 = #{errors3,jdbcType=VARCHAR},
+      error_4 = #{error4,jdbcType=VARCHAR},
+      errors_4 = #{errors4,jdbcType=VARCHAR},
+      error_5 = #{error5,jdbcType=VARCHAR},
+      errors_5 = #{errors5,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      jplpath = #{jplpath,jdbcType=VARCHAR},
+      indexpath = #{indexpath,jdbcType=VARCHAR},
+      states = #{states,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  jmeter-app-service:
+    image: jmeter-agent:1.0.0
+    container_name: jmeter-agent-service
+    network_mode: "host"
+    mem_limit: 2g
+    mem_reservation: 1g
+    cpus: 1.0
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      # 统一配置路径到 /app/config
+      - ./config:/app/config:rw
+      - ./agent-logs:/usr/local/jmeter/agent/inter/bootServiceProvide/logs:rw
+      - ./agent-store:/usr/local/jmeter/agent/inter/agentDownStore:rw
+    environment:
+      - TZ=Asia/Shanghai
+      - JAVA_OPTS=-server -XX:+UseG1GC -XX:MaxGCPauseMillis=150 -Djava.awt.headless=true -Dspring.jmx.enabled=false -Duser.timezone=Asia/Shanghai
+      - JMETER_OPTS=--add-opens java.base/java.lang=ALL-UNNAMED --add-opens java.base/java.util=ALL-UNNAMED
+      - SPRING_CONFIG_LOCATION=file:/app/config/
+    working_dir: /app
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9091/actuator/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

@@ -1,0 +1,63 @@
+# 使用多阶段构建
+FROM eclipse-temurin:17-jre-jammy AS builder
+
+# 设置构建参数和环境变量
+ARG DEBIAN_FRONTEND=noninteractive
+ENV TZ=Asia/Shanghai
+
+# 一次性执行所有 apt 操作
+RUN echo 'Acquire::Retries "3";' > /etc/apt/apt.conf.d/80-retries && \
+    echo 'Acquire::http::Timeout "120";' > /etc/apt/apt.conf.d/99-timeout
+
+RUN sed -i 's|http://.*ubuntu.com|http://mirrors.aliyun.com|g' /etc/apt/sources.list && \
+    apt-get update -qq --fix-missing && \
+    (apt-get install -y ntpdate || apt-get install -y ntp) && \
+    ln -snf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
+    echo Asia/Shanghai > /etc/timezone && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+# 最终镜像
+FROM eclipse-temurin:17-jre-jammy
+
+# 设置时区
+ENV TZ=Asia/Shanghai
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
+WORKDIR /app
+
+# 从builder复制已安装的依赖
+COPY --from=builder /usr/sbin/ntpdate /usr/bin/
+
+# 复制应用文件
+COPY --chown=root:root jdk8u412-b08 /app/jdk8u412-b08
+COPY --chown=root:root apache-jmeter-5.6.3 /usr/local/jmeter/agent/inter/bootServiceProvide/apache-jmeter-5.6.3
+COPY --chown=root:root target/jmeter-agent-0.0.1.jar /usr/local/jmeter/agent/inter/bootServiceProvide/agent-0.0.1.jar
+COPY --chown=root:root src/main/resources/application.properties /usr/local/jmeter/agent/inter/bootServiceProvide/
+COPY --chown=root:root src/main/resources/application.yml /usr/local/jmeter/agent/inter/bootServiceProvide/
+
+# 设置环境变量 - 关键修改
+# 创建符号链接使 JAVA_HOME 指向正确的路径
+RUN ln -sf /opt/java/openjdk /usr/local/openjdk-17
+
+ENV JAVA_HOME=/usr/local/openjdk-17 \
+    JAVA8_HOME=/app/jdk8u412-b08 \
+    JMETER_HOME=/usr/local/jmeter/agent/inter/bootServiceProvide/apache-jmeter-5.6.3 \
+    PATH=/opt/java/openjdk/bin:$JAVA8_HOME/bin:$JMETER_HOME/bin:$PATH
+
+# 设置执行权限
+RUN chmod +x /usr/local/jmeter/agent/inter/bootServiceProvide/agent-0.0.1.jar && \
+    chmod +x /usr/local/jmeter/agent/inter/bootServiceProvide/apache-jmeter-5.6.3/bin/* && \
+    chmod +x /app/jdk8u412-b08/bin/*
+
+# 验证 Java 安装
+RUN echo "Default Java home: $JAVA_HOME" && \
+    $JAVA_HOME/bin/java -version && \
+    echo "Java 8 home: $JAVA8_HOME" && \
+    $JAVA8_HOME/bin/java -version
+
+# 设置 JMeter 使用 JDK 17（默认）
+# JMeter 会自动使用 PATH 中的 Java 版本，即 JDK 17
+
+# 启动命令 - 使用 JDK 8 运行应用程序
+CMD ["/app/jdk8u412-b08/bin/java", "-jar", "/usr/local/jmeter/agent/inter/bootServiceProvide/agent-0.0.1.jar"]

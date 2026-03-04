@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.atguigu.gmall.dao.Jmeter_perf_agent_sourceMapper">
+    <resultMap id="BaseResultMap" type="com.atguigu.gmall.entity.Jmeter_perf_agent_source">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="ipaddress" property="ipaddress" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="osname" property="osname" jdbcType="VARCHAR"/>
+        <result column="hostname" property="hostname" jdbcType="VARCHAR"/>
+        <result column="cpucount" property="cpucount" jdbcType="VARCHAR"/>
+        <result column="cpufree" property="cpufree" jdbcType="VARCHAR"/>
+        <result column="systemcpuusage" property="systemcpuusage" jdbcType="VARCHAR"/>
+        <result column="memory" property="memory" jdbcType="VARCHAR"/>
+        <result column="diskram" property="diskram" jdbcType="VARCHAR"/>
+        <result column="javaversion" property="javaversion" jdbcType="VARCHAR"/>
+        <result column="time" property="time" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, ipaddress, username, osname, hostname, cpucount, systemcpuusage, `time`
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from jmeter_perf_agent_source
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from jmeter_perf_agent_source
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.atguigu.gmall.entity.Jmeter_perf_agent_source">
+    insert into jmeter_perf_agent_source (ipaddress, username,
+      osname, hostname, cpucount, cpufree,
+      systemcpuusage,memory,diskram, javaversion,`time`)
+    values (#{ipaddress,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR},
+      #{osname,jdbcType=VARCHAR}, #{hostname,jdbcType=VARCHAR}, #{cpucount,jdbcType=VARCHAR},
+      #{cpufree,jdbcType=VARCHAR},
+      #{systemcpuusage,jdbcType=VARCHAR},#{memory,jdbcType=VARCHAR},#{diskram,jdbcType=VARCHAR},
+      #{javaversion,jdbcType=VARCHAR},
+      #{time,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.atguigu.gmall.entity.Jmeter_perf_agent_source">
+        insert into jmeter_perf_agent_source
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="ipaddress != null">
+                ipaddress,
+            </if>
+            <if test="username != null">
+                username,
+            </if>
+            <if test="osname != null">
+                osname,
+            </if>
+            <if test="hostname != null">
+                hostname,
+            </if>
+            <if test="cpucount != null">
+                cpucount,
+            </if>
+            <if test="systemcpuusage != null">
+                systemcpuusage,
+            </if>
+            <if test="time != null">
+                `time`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="ipaddress != null">
+                #{ipaddress,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="osname != null">
+                #{osname,jdbcType=VARCHAR},
+            </if>
+            <if test="hostname != null">
+                #{hostname,jdbcType=VARCHAR},
+            </if>
+            <if test="cpucount != null">
+                #{cpucount,jdbcType=VARCHAR},
+            </if>
+            <if test="systemcpuusage != null">
+                #{systemcpuusage,jdbcType=VARCHAR},
+            </if>
+            <if test="time != null">
+                #{time,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.atguigu.gmall.entity.Jmeter_perf_agent_source">
+        update jmeter_perf_agent_source
+        <set>
+            <if test="ipaddress != null">
+                ipaddress = #{ipaddress,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null">
+                username = #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="osname != null">
+                osname = #{osname,jdbcType=VARCHAR},
+            </if>
+            <if test="hostname != null">
+                hostname = #{hostname,jdbcType=VARCHAR},
+            </if>
+            <if test="cpucount != null">
+                cpucount = #{cpucount,jdbcType=VARCHAR},
+            </if>
+            <if test="systemcpuusage != null">
+                systemcpuusage = #{systemcpuusage,jdbcType=VARCHAR},
+            </if>
+            <if test="time != null">
+                `time` = #{time,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.atguigu.gmall.entity.Jmeter_perf_agent_source">
+    update jmeter_perf_agent_source
+    set ipaddress = #{ipaddress,jdbcType=VARCHAR},
+      username = #{username,jdbcType=VARCHAR},
+      osname = #{osname,jdbcType=VARCHAR},
+      hostname = #{hostname,jdbcType=VARCHAR},
+      cpucount = #{cpucount,jdbcType=VARCHAR},
+      cpufree = #{cpufree,jdbcType=VARCHAR},
+      systemcpuusage = #{systemcpuusage,jdbcType=VARCHAR},
+      memory = #{memory,jdbcType=VARCHAR},
+      diskram = #{diskram,jdbcType=VARCHAR},
+      javaversion = #{javaversion,jdbcType=VARCHAR},
+      `time` = #{time,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+    <select id="selectByIp" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select * from jmeter_perf_agent_source
+    where ipaddress = #{ipaddress,jdbcType=VARCHAR} order by time limit 0,1 ;
+  </select>
+
+
+    <update id="updateAgentSource" parameterType="com.atguigu.gmall.entity.Jmeter_perf_agent_source">
+    update jmeter_perf_agent_source
+      set username = #{username,jdbcType=VARCHAR},
+          osname = #{osname,jdbcType=VARCHAR},
+          hostname = #{hostname,jdbcType=VARCHAR},
+          cpucount = #{cpucount,jdbcType=VARCHAR},
+          cpufree = #{cpufree,jdbcType=VARCHAR},
+          systemcpuusage = #{systemcpuusage,jdbcType=VARCHAR},
+          memory = #{memory,jdbcType=VARCHAR},
+          diskram = #{diskram,jdbcType=VARCHAR},
+          javaversion = #{javaversion,jdbcType=VARCHAR},
+          `time` = #{time,jdbcType=VARCHAR}
+    where ipaddress = #{ipaddress,jdbcType=VARCHAR}
+
+  </update>
+
+
+</mapper>

@@ -1,0 +1,153 @@
+2019-12-11 13:43:59,121 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2019-12-11 13:43:59,175 INFO o.a.j.JMeter: Loading user properties from: D:\jmeter4.0\node_1\bin\user.properties
+2019-12-11 13:43:59,184 INFO o.a.j.JMeter: Loading system properties from: D:\jmeter4.0\node_1\bin\system.properties
+2019-12-11 13:43:59,213 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: Version 4.0 r1823414
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: java.version=1.8.0_181
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: os.name=Windows 7
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: os.arch=amd64
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: os.version=6.1
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: file.encoding=GBK
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: Max memory     =1048576000
+2019-12-11 13:43:59,214 INFO o.a.j.JMeter: Available Processors =8
+2019-12-11 13:43:59,268 INFO o.a.j.JMeter: Default Locale=English (EN)
+2019-12-11 13:43:59,268 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2019-12-11 13:43:59,268 INFO o.a.j.JMeter: JMeterHome=D:\jmeter4.0\node_1
+2019-12-11 13:43:59,268 INFO o.a.j.JMeter: user.dir  =F:\boot_doubbo\code\gmall-interface
+2019-12-11 13:43:59,268 INFO o.a.j.JMeter: PWD       =F:\boot_doubbo\code\gmall-interface
+2019-12-11 13:43:59,270 INFO o.a.j.JMeter: IP: 10.255.6.23 Name: bj12015090740 FullName: bj12015090740.ucredit.com
+2019-12-11 13:43:59,271 INFO o.a.j.JMeter: Setting property 'jmeter.reportgenerator.outputdir' to:'D:\mars\ReportResultDir\20191211134353\ufin_api_repay_20191211134354_1\ufin_api_repay_20191211134354_report'
+2019-12-11 13:43:59,273 INFO o.a.j.s.FileServer: Default base='F:\boot_doubbo\code\gmall-interface'
+2019-12-11 13:43:59,354 INFO o.a.j.s.FileServer: Set new base='D:\mars\JmeterResultDir\jsp\result\test\jmeterScript\20191211134353'
+2019-12-11 13:43:59,797 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2019-12-11 13:43:59,917 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2019-12-11 13:43:59,944 INFO o.a.j.s.SaveService: Using SaveService properties version 4.0
+2019-12-11 13:43:59,955 INFO o.a.j.s.SaveService: Loading file: D:\mars\JmeterResultDir\jsp\result\test\jmeterScript\20191211134353\ufin_api_repay_20191211134353.jmx
+2019-12-11 13:44:00,158 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-12-11 13:44:00,158 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-12-11 13:44:00,158 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-12-11 13:44:00,158 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2019-12-11 13:44:00,158 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2019-12-11 13:44:00,159 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2019-12-11 13:44:01,558 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\loan.jmx
+2019-12-11 13:44:01,558 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\loan.jmx
+2019-12-11 13:44:01,622 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,622 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,626 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,626 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,627 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,628 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,629 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,629 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,631 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\loan.jmx
+2019-12-11 13:44:01,631 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\loan.jmx
+2019-12-11 13:44:01,668 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,668 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,670 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,670 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,672 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,672 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,674 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,674 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:01,676 INFO o.a.j.JMeter: Creating summariser <summary>
+2019-12-11 13:44:01,683 INFO o.a.j.r.d.ReportGenerator: ReportGenerator will use for Parsing the separator: ','
+2019-12-11 13:44:01,684 INFO o.a.j.r.d.ReportGenerator: Will generate report at end of test from  results file: D:/mars/ReportResultDir/20191211134353/ufin_api_repay_20191211134354_1/jtl/ufin_api_repay_20191211134354.jtl
+2019-12-11 13:44:01,684 INFO o.a.j.r.d.ReportGenerator: Reading report generator properties from: D:\jmeter4.0\node_1\bin\reportgenerator.properties
+2019-12-11 13:44:01,808 INFO o.a.j.r.d.ReportGenerator: Merging with JMeter properties
+2019-12-11 13:44:01,826 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.apdex_per_transaction' not found, using default value 'null' instead.
+2019-12-11 13:44:01,826 INFO o.a.j.r.c.ReportGeneratorConfiguration: apdex_per_transaction : {} is empty, not APDEX per transaction customization
+2019-12-11 13:44:01,827 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.sample_filter' not found, using default value 'null' instead.
+2019-12-11 13:44:01,827 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.report_title' not found, using default value 'null' instead.
+2019-12-11 13:44:01,827 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.start_date' not found, using default value 'null' instead.
+2019-12-11 13:44:01,827 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.end_date' not found, using default value 'null' instead.
+2019-12-11 13:44:01,827 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.date_format' not found, using default value 'null' instead.
+2019-12-11 13:44:01,828 INFO o.a.j.r.c.ReportGeneratorConfiguration: Will use date range start date: null, end date: null
+2019-12-11 13:44:01,855 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.activeThreadsOverTime.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,855 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.timeVsThreads.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,855 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimeDistribution.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,856 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.transactionsPerSecond.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,856 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentiles.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,856 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimePercentilesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,856 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.responseTimesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,856 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.connectTimeOverTime.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,857 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.graph.latenciesOverTime.exclude_controllers' not found, using default value 'false' instead.
+2019-12-11 13:44:01,858 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.filters_only_sample_series' not found, using default value 'true' instead.
+2019-12-11 13:44:01,858 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.series_filter' not found, using default value '' instead.
+2019-12-11 13:44:01,858 INFO o.a.j.r.c.ReportGeneratorConfiguration: Property 'jmeter.reportgenerator.exporter.html.show_controllers_only' not found, using default value 'false' instead.
+2019-12-11 13:44:01,862 INFO o.a.j.e.DistributedRunner: Configuring remote engine: 10.255.33.51:21889
+2019-12-11 13:44:01,894 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:02,324 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\loan.jmx
+2019-12-11 13:44:02,324 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\loan.jmx
+2019-12-11 13:44:02,391 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:02,392 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:02,401 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:02,401 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:02,412 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:02,412 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:02,424 INFO o.a.j.c.IncludeController: loadIncludedElements -- try to load included module: F:\home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:02,424 INFO o.a.j.s.SaveService: Loading file: \home\dengdagui\pathparameter\jituanzhifu.jmx
+2019-12-11 13:44:02,433 INFO o.a.j.e.DistributedRunner: Starting remote engines
+2019-12-11 13:44:02,434 INFO o.a.j.e.DistributedRunner: Starting the test @ Wed Dec 11 13:44:02 CST 2019 (1576043042433)
+2019-12-11 13:44:02,435 INFO o.a.j.e.ClientJMeterEngine: running clientengine run method
+2019-12-11 13:44:02,440 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2019-12-11 13:44:02,440 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2019-12-11 13:44:02,729 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:02,729 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:02,732 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2019-12-11 13:44:02,778 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
+2019-12-11 13:44:02,778 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
+2019-12-11 13:44:02,778 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:02,778 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:02,778 INFO o.a.j.s.BatchSampleSender: Using batching (client settings) for this run. Thresholds: num=100, time=60000
+2019-12-11 13:44:02,778 INFO o.a.j.s.DataStrippingSampleSender: Using DataStrippingSampleSender for this run
+2019-12-11 13:44:02,781 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:02,781 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:05,484 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:05,484 INFO o.a.j.r.RmiUtils: Disabling SSL for RMI as server.rmi.ssl.disable is set to 'true'
+2019-12-11 13:44:05,764 INFO o.a.j.e.ClientJMeterEngine: sent test to 10.255.33.51:21889 basedir='.'
+2019-12-11 13:44:05,764 INFO o.a.j.e.ClientJMeterEngine: Sending properties {}
+2019-12-11 13:44:05,777 INFO o.a.j.e.ClientJMeterEngine: sent run command to 10.255.33.51:21889
+2019-12-11 13:44:05,778 INFO o.a.j.e.DistributedRunner: Remote engines have been started
+2019-12-11 13:44:06,173 INFO o.a.j.JMeter: Started remote host:  10.255.33.51:21889 (1576043046173)
+2019-12-11 13:44:06,912 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2019-12-11 13:44:06,913 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2019-12-11 13:44:06,913 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2019-12-11 13:44:06,913 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2019-12-11 13:44:06,958 INFO o.a.j.r.Summariser: summary =      2 in 00:00:01 =    2.5/s Avg:   296 Min:     6 Max:   586 Err:     1 (50.00%)
+2019-12-11 13:44:06,959 INFO o.a.j.JMeter: Finished remote host: 10.255.33.51:21889 (1576043046959)
+2019-12-11 13:44:11,963 INFO o.a.j.JMeter: Interrupting RMI Reaper
+2019-12-11 13:44:11,963 INFO o.a.j.JMeter: Generating Dashboard
+2019-12-11 13:44:11,963 INFO o.a.j.r.d.ReportGenerator: Flushing result collector before report Generation
+2019-12-11 13:44:12,043 INFO o.a.j.r.p.NormalizerSampleConsumer: Using format, 'ms', to parse timeStamp field
+2019-12-11 13:44:12,187 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): beginDate produced 0 samples
+2019-12-11 13:44:12,187 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.AggregateConsumer#stopProducing(): endDate produced 0 samples
+2019-12-11 13:44:12,189 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ApdexSummaryConsumer#stopProducing(): apdexSummary produced 0 samples
+2019-12-11 13:44:12,189 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.RequestsSummaryConsumer#stopProducing(): requestsSummary produced 0 samples
+2019-12-11 13:44:12,206 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.StatisticsSummaryConsumer#stopProducing(): statisticsSummary produced 0 samples
+2019-12-11 13:44:12,251 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.Top5ErrorsBySamplerConsumer#stopProducing(): top5ErrorsBySampler produced 0 samples
+2019-12-11 13:44:12,252 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.ErrorsSummaryConsumer#stopProducing(): errorsSummary produced 0 samples
+2019-12-11 13:44:12,252 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.HitsPerSecondGraphConsumer#stopProducing(): hitsPerSecond produced 0 samples
+2019-12-11 13:44:12,298 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyVSRequestGraphConsumer#stopProducing(): latencyVsRequest produced 0 samples
+2019-12-11 13:44:12,298 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.SyntheticResponseTimeDistributionGraphConsumer#stopProducing(): syntheticResponseTimeDistribution produced 0 samples
+2019-12-11 13:44:12,298 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.BytesThroughputGraphConsumer#stopProducing(): bytesThroughputOverTime produced 0 samples
+2019-12-11 13:44:12,299 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.CodesPerSecondGraphConsumer#stopProducing(): codesPerSecond produced 0 samples
+2019-12-11 13:44:12,302 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeVSRequestGraphConsumer#stopProducing(): responseTimeVsRequest produced 0 samples
+2019-12-11 13:44:12,302 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): startIntervalControlerFilter produced 14 samples
+2019-12-11 13:44:12,302 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ActiveThreadsGraphConsumer#stopProducing(): activeThreadsOverTime produced 0 samples
+2019-12-11 13:44:12,302 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TimeVSThreadGraphConsumer#stopProducing(): timeVsThreads produced 0 samples
+2019-12-11 13:44:12,302 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeDistributionGraphConsumer#stopProducing(): responseTimeDistribution produced 0 samples
+2019-12-11 13:44:12,302 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.TransactionsPerSecondGraphConsumer#stopProducing(): transactionsPerSecond produced 0 samples
+2019-12-11 13:44:12,302 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesGraphConsumer#stopProducing(): responseTimePercentiles produced 0 samples
+2019-12-11 13:44:12,303 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimePercentilesOverTimeGraphConsumer#stopProducing(): responseTimePercentilesOverTime produced 0 samples
+2019-12-11 13:44:12,303 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ResponseTimeOverTimeGraphConsumer#stopProducing(): responseTimesOverTime produced 0 samples
+2019-12-11 13:44:12,303 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.ConnectTimeOverTimeGraphConsumer#stopProducing(): connectTimeOverTime produced 0 samples
+2019-12-11 13:44:12,303 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.graph.impl.LatencyOverTimeGraphConsumer#stopProducing(): latenciesOverTime produced 0 samples
+2019-12-11 13:44:12,304 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): nameFilter produced 28 samples
+2019-12-11 13:44:12,304 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.FilterConsumer#stopProducing(): dateRangeFilter produced 6 samples
+2019-12-11 13:44:12,304 INFO o.a.j.r.p.AbstractSampleConsumer: class org.apache.jmeter.report.processor.NormalizerSampleConsumer#stopProducing(): normalizer produced 2 samples
+2019-12-11 13:44:12,304 INFO o.a.j.r.p.CsvFileSampleSource: produce(): 2 samples produced in 252ms on channel 0
+2019-12-11 13:44:12,304 INFO o.a.j.r.d.ReportGenerator: Exporting data using exporter:'html' of className:'org.apache.jmeter.report.dashboard.HtmlTemplateExporter'
+2019-12-11 13:44:12,311 INFO o.a.j.r.d.HtmlTemplateExporter: Will generate dashboard in folder: D:\mars\ReportResultDir\20191211134353\ufin_api_repay_20191211134354_1\ufin_api_repay_20191211134354_report
+2019-12-11 13:44:12,409 INFO o.a.j.r.d.HtmlTemplateExporter: Report will be generated in: D:\mars\ReportResultDir\20191211134353\ufin_api_repay_20191211134354_1\ufin_api_repay_20191211134354_report, creating folder structure
+2019-12-11 13:44:13,248 INFO o.a.j.JMeter: Dashboard generated

@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  app-service:
+    build: .
+    network_mode: "host"
+    volumes:
+      - ./src/main/resources/application.properties:/app/application.properties
+      - ./src/main/resources/application.yml:/app/application.yml
+    environment:
+      - JAVA_HOME=/usr/local/openjdk-17
+      - JAVA8_HOME=/app/jdk8u412-b08
+      - JMETER_HOME=/app/apache-jmeter-5.6.3
+    working_dir: /app
