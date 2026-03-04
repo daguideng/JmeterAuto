@@ -5,8 +5,8 @@
 
 ## 项目结构
 - `code_2020_10_10/` - 主要项目代码目录
-  - `boot-order-service-consumer/` - 订单服务消费者
-  - `boot-user-service-provider/` - 用户服务提供者
+  - `boot-order-service-consumer/` - jmeter master
+  - `boot-user-service-provider/` - jmeter slave
   - `gmall-interface/` - 通用接口模块
   - `path/` - 路径相关测试代码
 - `apiAutoDemo/` - API 自动化测试示例
